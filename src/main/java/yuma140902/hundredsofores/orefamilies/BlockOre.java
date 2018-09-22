@@ -23,28 +23,28 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 	protected int oreGenConfigDefaultMinHeight = 2;
 	protected String[] oreGenConfigDefaultDimensionBlackListStr = new String[] {};
 	
-	public void setOreGemConfigDefaultIsOrdinaryGenEnabled(boolean oreGemConfigDefaultIsOrdinaryGenEnabled) {
-		this.oreGemConfigDefaultIsOrdinaryGenEnabled = oreGemConfigDefaultIsOrdinaryGenEnabled;
+	public void setOreGemConfigDefaultIsOrdinaryGenEnabled(boolean value) {
+		this.oreGemConfigDefaultIsOrdinaryGenEnabled = value;
 	}
 	
-	public void setOreGenConfigDefaultSpawnTries(int oreGenConfigDefaultSpawnTries) {
-		this.oreGenConfigDefaultSpawnTries = oreGenConfigDefaultSpawnTries;
+	public void setOreGenConfigDefaultSpawnTries(int value) {
+		this.oreGenConfigDefaultSpawnTries = value;
 	}
 	
-	public void setOreGenConfigDefaultSpawnSize(int oreGenConfigDefaultSpawnSize) {
-		this.oreGenConfigDefaultSpawnSize = oreGenConfigDefaultSpawnSize;
+	public void setOreGenConfigDefaultSpawnSize(int value) {
+		this.oreGenConfigDefaultSpawnSize = value;
 	}
 	
-	public void setOreGenConfigDefaultMaxHeight(int oreGenConfigDefaultMaxHeight) {
-		this.oreGenConfigDefaultMaxHeight = oreGenConfigDefaultMaxHeight;
+	public void setOreGenConfigDefaultMaxHeight(int value) {
+		this.oreGenConfigDefaultMaxHeight = value;
 	}
 	
-	public void setOreGenConfigDefaultMinHeight(int oreGenConfigDefaultMinHeight) {
-		this.oreGenConfigDefaultMinHeight = oreGenConfigDefaultMinHeight;
+	public void setOreGenConfigDefaultMinHeight(int value) {
+		this.oreGenConfigDefaultMinHeight = value;
 	}
 	
-	public void setOreGenConfigDefaultDimensionBlackListStr(String[] oreGenConfigDefaultDimensionBlackListStr) {
-		this.oreGenConfigDefaultDimensionBlackListStr = oreGenConfigDefaultDimensionBlackListStr;
+	public void setOreGenConfigDefaultDimensionBlackListStr(String[] value) {
+		this.oreGenConfigDefaultDimensionBlackListStr = value;
 	}
 	
 	public BlockOre(String oreName) {
