@@ -61,10 +61,10 @@ public final class OreFamilies {
 	private static final String LEAD_NAME = "lead";
 	private static final String RAINBOW_NAME = "rainbow";
 	
-	public static final OreFamily tin = new OreFamily(TIN_NAME);
-	public static final OreFamily copper = new OreFamily(COPPER_NAME);
-	public static final OreFamily silver = new OreFamily(SILVER_NAME);
-	public static final OreFamily lead = new OreFamily(LEAD_NAME);
+	public static final OreFamily tin = new OreFamilyWithIngot(TIN_NAME);
+	public static final OreFamily copper = new OreFamilyWithIngot(COPPER_NAME);
+	public static final OreFamily silver = new OreFamilyWithIngot(SILVER_NAME);
+	public static final OreFamily lead = new OreFamilyWithIngot(LEAD_NAME);
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
 		blockOre.setOreGenConfigDefaultSpawnTries(0);
 	}};
