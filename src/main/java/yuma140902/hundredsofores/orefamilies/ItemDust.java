@@ -28,7 +28,7 @@ public class ItemDust extends OreFamilyMemberItemBase {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_dust");
 		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_dust");
-		GameRegistry.registerItem(this, ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_dust");
+		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_dust");
 		OreDictionary.registerOre(_oreDictKey, this);
 	}
 }

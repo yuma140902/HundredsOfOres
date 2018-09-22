@@ -84,7 +84,7 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setBlockName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_ore");
 		this.setBlockTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_ore");
-		GameRegistry.registerBlock(this, ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_ore");
+		GameRegistry.registerBlock(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_ore");
 		OreDictionary.registerOre(_oreDictKey, this);
 	}
 }

@@ -32,7 +32,7 @@ public class BlockCompressedBlock extends OreFamilyMemberBlockBase {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setBlockName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_block");
 		this.setBlockTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_block");
-		GameRegistry.registerBlock(this, ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_block");
+		GameRegistry.registerBlock(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_block");
 		OreDictionary.registerOre(_oreDictKey, this);
 	}
 }

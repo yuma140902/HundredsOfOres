@@ -29,7 +29,7 @@ public class ItemIngot extends OreFamilyMemberItemBase {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_ingot");
 		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_ingot");
-		GameRegistry.registerItem(this, ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_ingot");
+		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_ingot");
 		OreDictionary.registerOre(_oreDictKey, this);		
 	}
 	

@@ -28,7 +28,7 @@ public class ItemGear extends OreFamilyMemberItemBase {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_gear");
 		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_gear");
-		GameRegistry.registerItem(this, ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_gear");
+		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_gear");
 		OreDictionary.registerOre(_oreDictKey, this);
 	}
 	
