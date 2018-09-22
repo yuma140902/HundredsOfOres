@@ -1,7 +1,0 @@
-tile.blockOreTin.name=
-
-tile.blockTin.name=
-
-item.itemIngotTin.name=
-
-item.itemDustTin.name=
