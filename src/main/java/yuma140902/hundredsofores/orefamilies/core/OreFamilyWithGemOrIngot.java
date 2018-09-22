@@ -4,9 +4,15 @@ import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import yuma140902.hundredsofores.ModHundredsOfOres;
+import yuma140902.hundredsofores.orefamilies.ItemPickaxe;
+import yuma140902.hundredsofores.util.StringUtil;
 
 public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 	public OreFamilyWithGemOrIngot(String oreName) {
@@ -16,11 +22,44 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 	public OreFamilyWithGemOrIngot(OreID oreName) {
 		super(oreName);
 	}
-
+	
+	protected int toolConfigDefaultHarvestLevel = 1;
+	protected int toolConfigDefaultMaxUses = 128;
+	protected float toolConfigDefaultEfficiency = 5;
+	protected float toolConfigDefaultDamage = 0;
+	protected int toolConfigDefaultEnchantability = 2;
+	
+	protected ItemPickaxe itemPickaxe;
+	protected ToolMaterial material;
+	
 	@Override
 	public void register() {
 		super.register();
 		getGemOrIngot().register();
+		itemPickaxe = new ItemPickaxe(getOreId(), material);
+		itemPickaxe.register();
+	}
+	
+	public void loadToolConfig(Configuration cfg) {
+		String toolNameLiteral = "tool" + StringUtil.ToCase_XxxXxx(getOreId());
+		String categoryName = "pickaxe_" + toolNameLiteral;
+		
+		String name = ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(getOreId()) + "_pickaxe";
+		
+		int harvestLevel = cfg.getInt(
+				toolNameLiteral + "_HarvestLevel", categoryName, toolConfigDefaultHarvestLevel, 0, 10,
+				toolNameLiteral + "のハーベストレベル");
+		int maxUses = cfg.getInt(
+				toolNameLiteral + "_MaxUses", categoryName, toolConfigDefaultMaxUses, 0, 4096, toolNameLiteral + "の使用可能回数(?)");
+		float efficiency = cfg.getFloat(
+				toolNameLiteral + "_Efficiency", categoryName, toolConfigDefaultEfficiency, 0, 4096, toolNameLiteral + "の採掘効率");
+		float damage = cfg.getFloat(
+				toolNameLiteral + "_Damage", categoryName, toolConfigDefaultDamage, 0, 4096, toolNameLiteral + "のダメージ量");
+		int enchantability = cfg.getInt(
+				toolNameLiteral + "_Enchantability", categoryName, toolConfigDefaultEnchantability, 0, 4096,
+				toolNameLiteral + "のエンチャントの付きやすさ");
+		
+		material = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability);
 	}
 	
 	@Override
@@ -55,4 +94,28 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 	}
 	
 	public abstract @Nonnull OreFamilyMemberItemBase getGemOrIngot();
+	
+	public ItemPickaxe getItemPickaxe() {
+		return itemPickaxe;
+	}
+
+	public void setToolConfigDefaultHarvestLevel(int value) {
+		this.toolConfigDefaultHarvestLevel = value;
+	}
+
+	public void setToolConfigDefaultMaxUses(int value) {
+		this.toolConfigDefaultMaxUses = value;
+	}
+
+	public void setToolConfigDefaultEfficiency(float value) {
+		this.toolConfigDefaultEfficiency = value;
+	}
+
+	public void setToolConfigDefaultDamage(float value) {
+		this.toolConfigDefaultDamage = value;
+	}
+
+	public void setToolConfigDefaultEnchantability(int value) {
+		this.toolConfigDefaultEnchantability = value;
+	}
 }
