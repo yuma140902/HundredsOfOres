@@ -44,13 +44,8 @@ public class OreFamily {
 		// レシピの追加など
 		BlockOre ore = this.getBlockOre();
 		ItemDust dust = this.getItemDust();
-		BlockCompressedIngot block = this.getBlockCompressedIngot();
-		ItemGear gear = this.getItemGear();
 		
 		String oreOredict = ore.getOreDictionaryKey();
-		String dustOredict = dust.getOreDictionaryKey();
-		String blockOredict = block.getOreDictionaryKey();
-		String gearOredict = gear.getOreDictionaryKey();
 		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust, 2), ore));
 		if (oreOredict != null)
