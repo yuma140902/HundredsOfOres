@@ -65,5 +65,7 @@ public final class OreFamilies {
 	public static final OreFamily copper = new OreFamily(COPPER_NAME);
 	public static final OreFamily silver = new OreFamily(SILVER_NAME);
 	public static final OreFamily lead = new OreFamily(LEAD_NAME);
-	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME);
+	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
+		blockOre.setOreGenConfigDefaultSpawnTries(0);
+	}};
 }
