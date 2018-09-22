@@ -17,12 +17,14 @@ public class OreFamilyWithIngot extends OreFamily {
 	public OreFamilyWithIngot(OreID oreName) {
 		super(oreName);
 		this.itemIngot = new ItemIngot(oreName);
+		this.itemNugget = new ItemNugget(oreName);
 	}
 	
 	@Override
 	public void register() {
 		super.register();
 		itemIngot.register();
+		itemNugget.register();
 	}
 	
 	@Override
