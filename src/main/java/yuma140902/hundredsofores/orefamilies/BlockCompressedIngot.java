@@ -15,6 +15,9 @@ public class BlockCompressedIngot extends OreFamilyMemberBlockBase {
 	
 	public BlockCompressedIngot(OreID oreName) {
 		super(oreName);
+		this.setHarvestLevel("pickaxe", 0);
+		this.setHardness(5.0F);
+		this.setResistance(10.0F);
 		this.setStepSound(soundTypeMetal);
 	}
 	

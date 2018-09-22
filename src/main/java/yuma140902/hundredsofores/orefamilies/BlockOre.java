@@ -49,6 +49,9 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 	public BlockOre(OreID oreName) {
 		super(oreName);
 		this.setHarvestLevel("pickaxe", DEFAULT_HARVEST_LEVEL);
+		this.setHardness(3.0F);
+		this.setResistance(5.0F);
+		this.setStepSound(soundTypePiston);
 	}
 		
 	public void loadConfig(Configuration cfg) {
