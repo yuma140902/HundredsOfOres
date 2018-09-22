@@ -5,21 +5,25 @@ tile.hundredsOfOres.copper_block.name=銅ブロック
 tile.hundredsOfOres.lead_block.name=鉛ブロック
 tile.hundredsOfOres.silver_block.name=銀ブロック
 tile.hundredsOfOres.tin_block.name=錫ブロック
+tile.hundredsOfOres.ruby_block.name=ルビーブロック
 
 tile.hundredsOfOres.copper_ore.name=銅鉱石
 tile.hundredsOfOres.lead_ore.name=鉛鉱石
 tile.hundredsOfOres.silver_ore.name=銀鉱石
 tile.hundredsOfOres.tin_ore.name=錫鉱石
+tile.hundredsOfOres.ruby_ore.name=ルビー鉱石
 
 item.hundredsOfOres.copper_dust.name=銅の粉
 item.hundredsOfOres.lead_dust.name=鉛の粉
 item.hundredsOfOres.silver_dust.name=銀の粉
 item.hundredsOfOres.tin_dust.name=錫の粉
+item.hundredsOfOres.ruby_dust.name=ルビーの粉
 
 item.hundredsOfOres.copper_gear.name=銅のギア
 item.hundredsOfOres.lead_gear.name=鉛のギア
 item.hundredsOfOres.silver_gear.name=銀のギア
 item.hundredsOfOres.tin_gear.name=錫のギア
+item.hundredsOfOres.ruby_gear.name=ルビーのギア
 
 item.hundredsOfOres.copper_ingot.name=銅インゴット
 item.hundredsOfOres.lead_ingot.name=鉛インゴット
@@ -30,3 +34,5 @@ item.hundredsOfOres.copper_nugget.name=銅ナゲット
 item.hundredsOfOres.lead_nugget.name=鉛ナゲット
 item.hundredsOfOres.silver_nugget.name=銀ナゲット
 item.hundredsOfOres.tin_nugget.name=錫ナゲット
+
+item.hundredsOfOres.ruby_gem.name=ルビー

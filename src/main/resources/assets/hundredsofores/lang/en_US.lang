@@ -5,21 +5,25 @@ tile.hundredsOfOres.copper_block.name=Copper Block
 tile.hundredsOfOres.lead_block.name=Lead Block
 tile.hundredsOfOres.silver_block.name=Silver Block
 tile.hundredsOfOres.tin_block.name=Tin Block
+tile.hundredsOfOres.ruby_block.name=Ruby Block
 
 tile.hundredsOfOres.copper_ore.name=Copper Ore
 tile.hundredsOfOres.lead_ore.name=Lead Ore
 tile.hundredsOfOres.silver_ore.name=Silver Ore
 tile.hundredsOfOres.tin_ore.name=Tin Ore
+tile.hundredsOfOres.ruby_ore.name=Ruby Ore
 
 item.hundredsOfOres.copper_dust.name=Copper Dust
 item.hundredsOfOres.lead_dust.name=Lead Dust
 item.hundredsOfOres.silver_dust.name=Silver Dust
 item.hundredsOfOres.tin_dust.name=Tin Dust
+item.hundredsOfOres.ruby_dust.name=Ruby Dust
 
 item.hundredsOfOres.copper_gear.name=Copper Gear
 item.hundredsOfOres.lead_gear.name=Lead Gear
 item.hundredsOfOres.silver_gear.name=Silver Gear
 item.hundredsOfOres.tin_gear.name=Tin Gear
+item.hundredsOfOres.ruby_gear.name=Ruby Gear
 
 item.hundredsOfOres.copper_ingot.name=Copper Ingot
 item.hundredsOfOres.lead_ingot.name=Lead Ingot
@@ -30,3 +34,5 @@ item.hundredsOfOres.copper_nugget.name=Copper Nugget
 item.hundredsOfOres.lead_nugget.name=Lead Nugget
 item.hundredsOfOres.silver_nugget.name=Silver Nugget
 item.hundredsOfOres.tin_nugget.name=Tin Nugget
+
+item.hundredsOfOres.ruby_gem.name=Ruby
