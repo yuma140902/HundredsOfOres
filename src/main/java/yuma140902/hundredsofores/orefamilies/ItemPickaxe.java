@@ -11,7 +11,7 @@ import yuma140902.hundredsofores.util.StringUtil;
 public class ItemPickaxe extends net.minecraft.item.ItemPickaxe implements IOreFamilyMember {
 	
 	private OreID _oreName;
-	private @Nonnull String _oreDictKey = "pickaxe" + StringUtil.ToCase_XxxXxx(_oreName);
+	private final @Nonnull String _oreDictKey;
 	
 	public ItemPickaxe(String oreName, ToolMaterial material) {
 		this(new OreID(oreName), material);
@@ -20,6 +20,7 @@ public class ItemPickaxe extends net.minecraft.item.ItemPickaxe implements IOreF
 	public ItemPickaxe(OreID oreName, ToolMaterial material) {
 		super(material);
 		_oreName = oreName;
+		_oreDictKey = "pickaxe" + StringUtil.ToCase_XxxXxx(_oreName);
 	}
 
 	@Override
