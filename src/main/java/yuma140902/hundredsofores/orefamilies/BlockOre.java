@@ -12,7 +12,7 @@ import yuma140902.hundredsofores.util.StringUtil;
 
 public class BlockOre extends OreFamilyMemberBlockBase {
 
-	private static final int DEFAULT_HARVEST_LEVEL = 1; 
+	private static final int DEFAULT_HARVEST_LEVEL = 0; 
 	
 	protected OreGenConfig oreGenConfig;
 	
