@@ -54,7 +54,7 @@ public class ModHundredsOfOres {
 		MyItems.register();
 		OreFamilies.register();
 		
-		OreFamilies.loadOreGenConfigs();
+		OreFamilies.loadConfigs();
 	}
 	
 	@EventHandler
