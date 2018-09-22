@@ -25,6 +25,7 @@ public class ModHundredsOfOres {
 	public static final String CONFIG_DIR = "config\\" + MOD_ID + "\\";
 	public static final String MAIN_CONFIG_FILE_NAME = CONFIG_DIR + "main.cfg";
 	public static final String ORE_GEN_CONFIG_FILE_NAME = CONFIG_DIR + "ore_gen.cfg";
+	public static final String TOOL_CONFIG_FILE_NAME = CONFIG_DIR + "tools.cfg";
 	
 	private void loadModMetadata(ModMetadata modMetadata) {
 		modMetadata.modId = MOD_ID;

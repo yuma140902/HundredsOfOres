@@ -40,6 +40,20 @@ public final class OreFamilies {
 		finally {
 			oreGenConfig.save();
 		}
+		
+		Configuration toolConfig = new Configuration(new File(ModHundredsOfOres.TOOL_CONFIG_FILE_NAME));
+		try {
+			toolConfig.load();
+			
+			tin.loadToolConfig(toolConfig);
+			copper.loadToolConfig(toolConfig);
+			silver.loadToolConfig(toolConfig);
+			lead.loadToolConfig(toolConfig);
+			ruby.loadToolConfig(toolConfig);
+		}
+		finally {
+			toolConfig.save();
+		}
 	}
 	
 	public static void init() {
@@ -67,12 +81,12 @@ public final class OreFamilies {
 	private static final String RAINBOW_NAME = "rainbow";
 	private static final String RUBY_NAME = "ruby";
 	
-	public static final OreFamily tin = new OreFamilyWithIngot(TIN_NAME);
-	public static final OreFamily copper = new OreFamilyWithIngot(COPPER_NAME);
-	public static final OreFamily silver = new OreFamilyWithIngot(SILVER_NAME);
-	public static final OreFamily lead = new OreFamilyWithIngot(LEAD_NAME);
+	public static final OreFamilyWithGemOrIngot tin = new OreFamilyWithIngot(TIN_NAME);
+	public static final OreFamilyWithGemOrIngot copper = new OreFamilyWithIngot(COPPER_NAME);
+	public static final OreFamilyWithGemOrIngot silver = new OreFamilyWithIngot(SILVER_NAME);
+	public static final OreFamilyWithGemOrIngot lead = new OreFamilyWithIngot(LEAD_NAME);
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
 		blockOre.setOreGemConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
-	public static final OreFamily ruby = new OreFamilyWithGem(RUBY_NAME);
+	public static final OreFamilyWithGemOrIngot ruby = new OreFamilyWithGem(RUBY_NAME);
 }
