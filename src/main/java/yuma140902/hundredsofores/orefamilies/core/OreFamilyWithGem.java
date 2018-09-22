@@ -8,7 +8,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.orefamilies.ItemGem;
 
-public class OreFamilyWithGem extends OreFamily {
+public class OreFamilyWithGem extends OreFamilyWithGemOrIngot {
 	public OreFamilyWithGem(String oreName) {
 		this(new OreID(oreName));
 	}
@@ -61,6 +61,11 @@ public class OreFamilyWithGem extends OreFamily {
 	protected ItemGem itemGem;
 	
 	public ItemGem getItemGem() {
+		return itemGem;
+	}
+
+	@Override
+	public Item getGemOrIngot() {
 		return itemGem;
 	}
 }

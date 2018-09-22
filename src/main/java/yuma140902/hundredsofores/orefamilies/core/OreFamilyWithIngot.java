@@ -9,7 +9,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.orefamilies.ItemIngot;
 import yuma140902.hundredsofores.orefamilies.ItemNugget;
 
-public class OreFamilyWithIngot extends OreFamily {
+public class OreFamilyWithIngot extends OreFamilyWithGemOrIngot {
 	public OreFamilyWithIngot(String oreName) {
 		this(new OreID(oreName));
 	}
@@ -82,5 +82,10 @@ public class OreFamilyWithIngot extends OreFamily {
 	
 	public ItemNugget getItemNugget() {
 		return itemNugget;
+	}
+	
+	@Override
+	public Item getGemOrIngot() {
+		return itemIngot;
 	}
 }
