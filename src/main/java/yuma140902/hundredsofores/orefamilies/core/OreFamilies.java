@@ -16,6 +16,7 @@ public final class OreFamilies {
 		silver.register();
 		lead.register();
 		rainbow.register();
+		ruby.register();
 	}
 	
 	public static void loadConfigs() {
@@ -33,6 +34,7 @@ public final class OreFamilies {
 			silver.loadConfig(cfg);
 			lead.loadConfig(cfg);
 			rainbow.loadConfig(cfg);
+			ruby.loadConfig(cfg);
 		}
 		finally {
 			cfg.save();
@@ -45,6 +47,7 @@ public final class OreFamilies {
 		silver.init();
 		lead.init();
 		rainbow.init();
+		ruby.init();
 	}
 	
 	public static void registerToWorldGenerators() {
@@ -53,6 +56,7 @@ public final class OreFamilies {
 		silver.registerToWorldGenerators();
 		lead.registerToWorldGenerators();
 		rainbow.registerToWorldGenerators();
+		ruby.registerToWorldGenerators();
 	}
 	
 	private static final String COPPER_NAME = "copper";
@@ -60,6 +64,7 @@ public final class OreFamilies {
 	private static final String TIN_NAME = "tin";
 	private static final String LEAD_NAME = "lead";
 	private static final String RAINBOW_NAME = "rainbow";
+	private static final String RUBY_NAME = "ruby";
 	
 	public static final OreFamily tin = new OreFamilyWithIngot(TIN_NAME);
 	public static final OreFamily copper = new OreFamilyWithIngot(COPPER_NAME);
@@ -68,4 +73,5 @@ public final class OreFamilies {
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
 		blockOre.setOreGenConfigDefaultSpawnTries(0);
 	}};
+	public static final OreFamily ruby = new OreFamilyWithGem(RUBY_NAME);
 }
