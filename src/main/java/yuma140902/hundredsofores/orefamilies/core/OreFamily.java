@@ -59,7 +59,7 @@ public class OreFamily {
 		this.getItemGear().register();
 	}
 	
-	public void loadConfig(Configuration cfg) {
+	public void loadOreGenConfig(Configuration cfg) {
 		this.getBlockOre().loadConfig(cfg);
 	}
 	

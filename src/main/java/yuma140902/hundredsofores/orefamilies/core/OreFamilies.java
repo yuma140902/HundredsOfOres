@@ -1,5 +1,6 @@
 package yuma140902.hundredsofores.orefamilies.core;
 
+import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import yuma140902.hundredsofores.ModHundredsOfOres;
 import yuma140902.hundredsofores.util.ListUtil;
@@ -20,24 +21,24 @@ public final class OreFamilies {
 	}
 	
 	public static void loadConfigs() {
-		Configuration cfg = ModHundredsOfOres.CONFIGURATION;
+		Configuration oreGenConfig = new Configuration(new File(ModHundredsOfOres.ORE_GEN_CONFIG_FILE_NAME));
 		try {
-			cfg.load();
+			oreGenConfig.load();
 			
 			String[] globalDimensionBlackListStr = 
-					cfg.getStringList("GlobalDimensionBlackList", "ore_gen", 
+					oreGenConfig.getStringList("GlobalDimensionBlackList", "ore_gen", 
 							new String[] {"1", "-1"}, "鉱石を生成しないディメンションIDを指定します。すべての鉱石に適応されます");
 			globalDimensionBlackList = ListUtil.ToIntList(globalDimensionBlackListStr);
 			
-			tin.loadConfig(cfg);
-			copper.loadConfig(cfg);
-			silver.loadConfig(cfg);
-			lead.loadConfig(cfg);
-			rainbow.loadConfig(cfg);
-			ruby.loadConfig(cfg);
+			tin.loadOreGenConfig(oreGenConfig);
+			copper.loadOreGenConfig(oreGenConfig);
+			silver.loadOreGenConfig(oreGenConfig);
+			lead.loadOreGenConfig(oreGenConfig);
+			rainbow.loadOreGenConfig(oreGenConfig);
+			ruby.loadOreGenConfig(oreGenConfig);
 		}
 		finally {
-			cfg.save();
+			oreGenConfig.save();
 		}
 	}
 	
