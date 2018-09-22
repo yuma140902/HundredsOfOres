@@ -13,12 +13,6 @@ public class OreFamilyWithGem extends OreFamilyWithGemOrIngot {
 		this.itemGem = new ItemGem(oreName);
 	}
 	
-	@Override
-	public void register() {
-		super.register();
-		itemGem.register();
-	}
-	
 	protected @Nonnull ItemGem itemGem;
 	
 	public ItemGem getItemGem() {

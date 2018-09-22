@@ -16,6 +16,12 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 	public OreFamilyWithGemOrIngot(OreID oreName) {
 		super(oreName);
 	}
+
+	@Override
+	public void register() {
+		super.register();
+		getGemOrIngot().register();
+	}
 	
 	@Override
 	public void init() {

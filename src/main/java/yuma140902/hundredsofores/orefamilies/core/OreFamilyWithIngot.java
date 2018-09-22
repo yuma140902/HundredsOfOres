@@ -23,7 +23,6 @@ public class OreFamilyWithIngot extends OreFamilyWithGemOrIngot {
 	@Override
 	public void register() {
 		super.register();
-		itemIngot.register();
 		itemNugget.register();
 	}
 	
