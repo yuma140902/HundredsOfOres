@@ -8,7 +8,6 @@ import yuma140902.hundredsofores.orefamilies.BlockCompressedIngot;
 import yuma140902.hundredsofores.orefamilies.BlockOre;
 import yuma140902.hundredsofores.orefamilies.ItemDust;
 import yuma140902.hundredsofores.orefamilies.ItemGear;
-import yuma140902.hundredsofores.orefamilies.ItemNugget;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 
 /**
@@ -28,7 +27,6 @@ public class OreFamily {
 	protected ItemDust itemDust;
 	protected BlockCompressedIngot blockCompressedIngot;
 	protected ItemGear itemGear;
-	protected ItemNugget itemNugget;
 	
 	public OreFamily(String oreName) {
 		this(new OreID(oreName));
@@ -40,7 +38,6 @@ public class OreFamily {
 		this.itemDust = new ItemDust(oreName);
 		this.blockCompressedIngot = new BlockCompressedIngot(oreName);
 		this.itemGear = new ItemGear(oreName);
-		this.itemNugget = new ItemNugget(oreName);
 	}
 	
 	public void init() {
@@ -49,13 +46,11 @@ public class OreFamily {
 		ItemDust dust = this.getItemDust();
 		BlockCompressedIngot block = this.getBlockCompressedIngot();
 		ItemGear gear = this.getItemGear();
-		ItemNugget nugget = this.getItemNugget();
 		
 		String oreOredict = ore.getOreDictionaryKey();
 		String dustOredict = dust.getOreDictionaryKey();
 		String blockOredict = block.getOreDictionaryKey();
 		String gearOredict = gear.getOreDictionaryKey();
-		String nuggetOredict = nugget.getOreDictionaryKey();
 		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust, 2), ore));
 		if (oreOredict != null)
@@ -67,7 +62,6 @@ public class OreFamily {
 		this.getItemDust().register();
 		this.getBlockCompressedIngot().register();
 		this.getItemGear().register();
-		this.getItemNugget().register();
 	}
 	
 	public void loadConfig(Configuration cfg) {
@@ -97,10 +91,6 @@ public class OreFamily {
 
 	public ItemGear getItemGear() {
 		return itemGear;
-	}
-
-	public ItemNugget getItemNugget() {
-		return itemNugget;
 	}
 	
 }
