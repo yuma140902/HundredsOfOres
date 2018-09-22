@@ -47,6 +47,7 @@ public class OreFamily {
 		
 		String oreOredict = ore.getOreDictionaryKey();
 		
+		// 鉱石から粉2つ TODO: 独自の粉砕機を実装したい
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust, 2), ore));
 		if (oreOredict != null)
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust, 2), oreOredict));
