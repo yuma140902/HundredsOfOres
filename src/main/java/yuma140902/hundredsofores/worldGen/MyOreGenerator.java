@@ -14,11 +14,11 @@ import yuma140902.hundredsofores.orefamilies.core.OreGenConfig;
 import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.Pair;
 
-public class MyOverWorldOreGenerator implements IWorldGenerator {
+public class MyOreGenerator implements IWorldGenerator {
 	private List<Pair<WorldGenMinable, OreGenConfig>> _worldGenMinabes = new ArrayList<Pair<WorldGenMinable, OreGenConfig>>();
 	
 	
-	public MyOverWorldOreGenerator() {}
+	public MyOreGenerator() {}
 	
 	public void addOreGenerator(Block ore, OreGenConfig config) {
 		if(config == null) return;

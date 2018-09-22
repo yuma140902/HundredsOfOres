@@ -66,7 +66,7 @@ public class OreFamily {
 	
 	public void registerToWorldGenerators() {
 		BlockOre ore = this.getBlockOre();
-		WorldGenerators.overWorldOreGenerator.addOreGenerator(ore, ore.getOreGeneratorConfig());
+		WorldGenerators.oreGenerator.addOreGenerator(ore, ore.getOreGeneratorConfig());
 	}
 	
 	public OreID getOreId() {
