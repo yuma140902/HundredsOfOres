@@ -20,14 +20,6 @@ public final class OreFamilies {
 		ruby.register();
 	}
 	
-	public static void loadToolConfigs() {
-		
-	}
-	
-	public static void registerTools() {
-		
-	}
-	
 	public static void loadOreGenConfigs() {
 		Configuration oreGenConfig = new Configuration(new File(ModHundredsOfOres.ORE_GEN_CONFIG_FILE_NAME));
 		try {
