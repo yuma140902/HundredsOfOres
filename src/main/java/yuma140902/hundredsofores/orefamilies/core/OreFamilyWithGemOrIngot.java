@@ -60,7 +60,8 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 				toolNameLiteral + "_Enchantability", categoryName, toolConfigDefaultEnchantability, 0, 4096,
 				toolNameLiteral + "のエンチャントの付きやすさ");
 		
-		material = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability);
+		material = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability)
+				.setRepairItem(new ItemStack(getGemOrIngot()));
 	}
 	
 	@Override
