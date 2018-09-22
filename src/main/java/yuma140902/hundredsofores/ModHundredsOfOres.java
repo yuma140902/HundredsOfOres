@@ -54,6 +54,9 @@ public class ModHundredsOfOres {
 		MyItems.register();
 		OreFamilies.register();
 		
+		OreFamilies.loadToolConfigs();
+		OreFamilies.registerTools();
+		
 		OreFamilies.loadOreGenConfigs();
 	}
 	
