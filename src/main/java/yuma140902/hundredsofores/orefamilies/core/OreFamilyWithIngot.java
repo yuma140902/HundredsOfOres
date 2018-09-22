@@ -40,27 +40,34 @@ public class OreFamilyWithIngot extends OreFamily {
 		String ingotOredict = itemIngot.getOreDictionaryKey();
 		String nuggetOredict = itemNugget.getOreDictionaryKey();
 		
+		// ブロックの解凍
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot, 9), block));
 		if (blockOredict != null)
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot, 9), blockOredict));
 		
+		// ブロックへ圧縮
 		GameRegistry.addRecipe(new ShapedOreRecipe(block, "###", "###", "###", '#', ingot));
 		if (ingotOredict != null)
 			GameRegistry.addRecipe(new ShapedOreRecipe(block, "###", "###", "###", '#', ingotOredict));
 		
+		// インゴットからギア
 		GameRegistry.addRecipe(new ShapedOreRecipe(gear, " # ", "# #", " # ", '#', ingot));
 		if (ingotOredict != null)
 			GameRegistry.addRecipe(new ShapedOreRecipe(gear, " # ", "# #", " # ", '#', ingotOredict));
 		
+		// ナゲットからインゴット
 		GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nugget));
 		if (nuggetOredict != null)
 			GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nuggetOredict));
 		
+		// インゴットからナゲット
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingot));
 		if (ingotOredict != null)
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingotOredict));
 		
+		// 鉱石を精錬してインゴット
 		GameRegistry.addSmelting(ore, new ItemStack(ingot), OreFamily.DEFAULT_FURANCE_EXP);
+		// 粉を精錬してインゴット
 		GameRegistry.addSmelting(dust, new ItemStack(ingot), OreFamily.DEFAULT_FURANCE_EXP);
 	}
 	
