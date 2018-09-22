@@ -52,9 +52,9 @@ public class ModHundredsOfOres {
 		
 		MyBlocks.register();
 		MyItems.register();
-		OreFamilies.register();
 		
 		OreFamilies.loadConfigs();
+		OreFamilies.register();
 	}
 	
 	@EventHandler
