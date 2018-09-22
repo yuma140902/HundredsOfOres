@@ -42,10 +42,10 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 	}
 	
 	public void loadToolConfig(Configuration cfg) {
-		String toolNameLiteral = "tool" + StringUtil.ToCase_XxxXxx(getOreId());
-		String categoryName = "pickaxe_" + toolNameLiteral;
+		String toolNameLiteral = "pickaxe" + StringUtil.ToCase_XxxXxx(getOreId());
+		String categoryName = toolNameLiteral;
 		
-		String name = ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(getOreId()) + "_pickaxe";
+		String name = ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(getOreId()) + ".pickaxe";
 		
 		int harvestLevel = cfg.getInt(
 				toolNameLiteral + "_HarvestLevel", categoryName, toolConfigDefaultHarvestLevel, 0, 10,
