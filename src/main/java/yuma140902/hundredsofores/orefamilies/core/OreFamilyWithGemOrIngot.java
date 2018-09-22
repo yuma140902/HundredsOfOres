@@ -3,6 +3,7 @@ package yuma140902.hundredsofores.orefamilies.core;
 import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -71,6 +72,7 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		Item dust = itemDust;
 		Item gem_ingot = getGemOrIngot();
 		Item gear = itemGear;
+		Item pickaxe = itemPickaxe;
 		
 		String blockOredict = blockCompressedBlock.getOreDictionaryKey();
 		String ingotOredict = getGemOrIngot().getOreDictionaryKey();
@@ -86,6 +88,10 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		// ジェムからギア
 		GameRegistry.addRecipe(new ShapedOreRecipe(gear, " # ", "# #", " # ", '#', gem_ingot));
 		GameRegistry.addRecipe(new ShapedOreRecipe(gear, " # ", "# #", " # ", '#', ingotOredict));
+		
+		// ジェムOrインゴットからツルハシ
+		GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "###", " | ", " | ", '#', gem_ingot, '|', Items.stick));
+		GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "###", " | ", " | ", '#', ingotOredict, '|', Items.stick));
 		
 		// 鉱石を精錬してジェムOrインゴット
 		GameRegistry.addSmelting(ore, new ItemStack(gem_ingot), OreFamily.DEFAULT_FURANCE_EXP);
