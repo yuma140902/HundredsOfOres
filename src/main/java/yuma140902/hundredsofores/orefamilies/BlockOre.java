@@ -11,37 +11,42 @@ import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.StringUtil;
 
 public class BlockOre extends OreFamilyMemberBlockBase {
-
-	private static final int DEFAULT_HARVEST_LEVEL = 0; 
+	
+	private static final int DEFAULT_HARVEST_LEVEL = 0;
 	
 	protected OreGenConfig oreGenConfig;
 	
+	protected boolean oreGemConfigDefaultIsOrdinaryGenEnabled = true;
 	protected int oreGenConfigDefaultSpawnTries = 20;
 	protected int oreGenConfigDefaultSpawnSize = 8;
 	protected int oreGenConfigDefaultMaxHeight = 80;
 	protected int oreGenConfigDefaultMinHeight = 2;
 	protected String[] oreGenConfigDefaultDimensionBlackListStr = new String[] {};
-
+	
+	public void setOreGemConfigDefaultIsOrdinaryGenEnabled(boolean oreGemConfigDefaultIsOrdinaryGenEnabled) {
+		this.oreGemConfigDefaultIsOrdinaryGenEnabled = oreGemConfigDefaultIsOrdinaryGenEnabled;
+	}
+	
 	public void setOreGenConfigDefaultSpawnTries(int oreGenConfigDefaultSpawnTries) {
 		this.oreGenConfigDefaultSpawnTries = oreGenConfigDefaultSpawnTries;
 	}
-
+	
 	public void setOreGenConfigDefaultSpawnSize(int oreGenConfigDefaultSpawnSize) {
 		this.oreGenConfigDefaultSpawnSize = oreGenConfigDefaultSpawnSize;
 	}
-
+	
 	public void setOreGenConfigDefaultMaxHeight(int oreGenConfigDefaultMaxHeight) {
 		this.oreGenConfigDefaultMaxHeight = oreGenConfigDefaultMaxHeight;
 	}
-
+	
 	public void setOreGenConfigDefaultMinHeight(int oreGenConfigDefaultMinHeight) {
 		this.oreGenConfigDefaultMinHeight = oreGenConfigDefaultMinHeight;
 	}
-
+	
 	public void setOreGenConfigDefaultDimensionBlackListStr(String[] oreGenConfigDefaultDimensionBlackListStr) {
 		this.oreGenConfigDefaultDimensionBlackListStr = oreGenConfigDefaultDimensionBlackListStr;
 	}
-
+	
 	public BlockOre(String oreName) {
 		this(new OreID(oreName));
 	}
@@ -53,32 +58,46 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 		this.setResistance(5.0F);
 		this.setStepSound(soundTypePiston);
 	}
-		
+	
 	public void loadConfig(Configuration cfg) {
 		String oreNameLiteral = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
-		int spawnTries = cfg.getInt(oreNameLiteral + "_SpawnTries", "ore_gen", oreGenConfigDefaultSpawnTries, 0, 1024, oreNameLiteral + "の生成確率");
-		int spawnSize = cfg.getInt(oreNameLiteral + "_SpawnSize", "ore_gen", oreGenConfigDefaultSpawnSize, 0, 1024, oreNameLiteral + "が一度に生成される数");
-		int maxHeight = cfg.getInt(oreNameLiteral + "_MaxHeight", "ore_gen", oreGenConfigDefaultMaxHeight, 0, 256, oreNameLiteral + "が生成される最高の高さ");
-		int minHeight = cfg.getInt(oreNameLiteral + "_MinHeight", "ore_gen", oreGenConfigDefaultMinHeight, 0, 256, oreNameLiteral + "が生成される最低の高さ");
-
-		String[] dimensionBlackListStr = 
-				cfg.getStringList(oreNameLiteral + "_dimensionBlackList", "ore_gen",
-						oreGenConfigDefaultDimensionBlackListStr, oreNameLiteral + "を生成しないディメンションID");
-		int[] dimensionBlackList = ListUtil.ToIntList(dimensionBlackListStr);
+		boolean isOrdinaryGenEnabled = cfg.getBoolean(
+				oreNameLiteral + "_isDefaultGenEnabled", "ore_gen", oreGemConfigDefaultIsOrdinaryGenEnabled,
+				oreNameLiteral + "の標準の生成が有効になっているかどうか");
+		int spawnTries = cfg.getInt(
+				oreNameLiteral + "_SpawnTries", "ore_gen", oreGenConfigDefaultSpawnTries, 0, 1024, oreNameLiteral + "の生成確率");
+		int spawnSize = cfg.getInt(
+				oreNameLiteral + "_SpawnSize", "ore_gen", oreGenConfigDefaultSpawnSize, 0, 1024, oreNameLiteral + "が一度に生成される数");
+		int maxHeight = cfg.getInt(
+				oreNameLiteral + "_MaxHeight", "ore_gen", oreGenConfigDefaultMaxHeight, 0, 256, oreNameLiteral + "が生成される最高の高さ");
+		int minHeight = cfg.getInt(
+				oreNameLiteral + "_MinHeight", "ore_gen", oreGenConfigDefaultMinHeight, 0, 256, oreNameLiteral + "が生成される最低の高さ");
 		
-		oreGenConfig = new OreGenConfig(spawnTries, spawnSize, maxHeight, minHeight, dimensionBlackList);
+		String[] dimensionBlackListStr = cfg.getStringList(
+				oreNameLiteral + "_dimensionBlackList", "ore_gen", oreGenConfigDefaultDimensionBlackListStr,
+				oreNameLiteral + "を生成しないディメンションID");
+		
+		if (isOrdinaryGenEnabled) {
+			int[] dimensionBlackList = ListUtil.ToIntList(dimensionBlackListStr);
+			
+			oreGenConfig = new OreGenConfig(spawnTries, spawnSize, maxHeight, minHeight, dimensionBlackList);
+		}
+		else {
+			oreGenConfig = null;
+		}
 	}
 	
 	public OreGenConfig getOreGeneratorConfig() {
 		return oreGenConfig;
 	}
 	
-	private final String _oreDictKey = "ore" + StringUtil.ToCase_XxxXxx(_oreName); 
+	private final String _oreDictKey = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
+	
 	@Override
 	public String getOreDictionaryKey() {
 		return _oreDictKey;
 	}
-
+	
 	@Override
 	public void register() {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
