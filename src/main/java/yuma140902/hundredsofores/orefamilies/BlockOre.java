@@ -93,8 +93,7 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 		return oreGenConfig;
 	}
 	
-	@Nonnull
-	private final String _oreDictKey = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
+	private final @Nonnull String _oreDictKey = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
 	
 	@Override
 	public String getOreDictionaryKey() {
