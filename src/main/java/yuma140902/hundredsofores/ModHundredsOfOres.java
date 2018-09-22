@@ -24,7 +24,7 @@ public class ModHundredsOfOres {
 	public static final String MOD_NAME = "鉱石追加MOD HundredsOfOres";
 	public static final String MOD_VERSION = "mc1.7.10_1.0.0";
 	public static final CreativeTabs MOD_CREATIVETAB = new HOOCreativeTab();
-	private static final String CONFIG_FILE_NAME = "config\\" + MOD_NAME + ".cfg";
+	private static final String CONFIG_FILE_NAME = "config\\" + MOD_ID + ".cfg";
 	public static final Configuration CONFIGURATION = new Configuration(new File(CONFIG_FILE_NAME));
 	
 	private void loadModMetadata(ModMetadata modMetadata) {
