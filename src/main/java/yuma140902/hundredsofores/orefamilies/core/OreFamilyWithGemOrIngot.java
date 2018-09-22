@@ -78,20 +78,64 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		String gem_ingotOredict = getGemOrIngot().getOreDictionaryKey();
 		
 		// ブロックの解凍
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(gem_ingot, 9), block));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(gem_ingot, 9), blockOredict));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(
+				new ItemStack(gem_ingot, 9), 
+				block
+				));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(
+				new ItemStack(gem_ingot, 9), 
+				blockOredict
+				));
 		
 		// ブロックへ圧縮
-		GameRegistry.addRecipe(new ShapedOreRecipe(block, "###", "###", "###", '#', gem_ingot));
-		GameRegistry.addRecipe(new ShapedOreRecipe(block, "###", "###", "###", '#', gem_ingotOredict));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				block, 
+				"###", 
+				"###", 
+				"###", 
+				'#', gem_ingot
+				));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				block, 
+				"###", 
+				"###", 
+				"###", 
+				'#', gem_ingotOredict
+				));
 		
 		// ジェムOrインゴットからギア
-		GameRegistry.addRecipe(new ShapedOreRecipe(gear, " # ", "# #", " # ", '#', gem_ingot));
-		GameRegistry.addRecipe(new ShapedOreRecipe(gear, " # ", "# #", " # ", '#', gem_ingotOredict));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				gear, 
+				" # ", 
+				"# #", 
+				" # ", 
+				'#', gem_ingot
+				));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				gear, 
+				" # ", 
+				"# #", 
+				" # ", 
+				'#', gem_ingotOredict
+				));
 		
 		// ジェムOrインゴットからツルハシ
-		GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "###", " | ", " | ", '#', gem_ingot, '|', Items.stick));
-		GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "###", " | ", " | ", '#', gem_ingotOredict, '|', Items.stick));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				pickaxe, 
+				"###", 
+				" | ", 
+				" | ", 
+				'#', gem_ingot, 
+				'|', Items.stick
+				));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				pickaxe, 
+				"###", 
+				" | ", 
+				" | ", 
+				'#', gem_ingotOredict, 
+				'|', Items.stick
+				));
 		
 		// 鉱石を精錬してジェムOrインゴット
 		GameRegistry.addSmelting(ore, new ItemStack(gem_ingot), OreFamily.DEFAULT_FURANCE_EXP);
