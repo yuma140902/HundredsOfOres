@@ -20,7 +20,7 @@ public final class OreFamilies {
 		ruby.register();
 	}
 	
-	public static void loadConfigs() {
+	public static void loadOreGenConfigs() {
 		Configuration oreGenConfig = new Configuration(new File(ModHundredsOfOres.ORE_GEN_CONFIG_FILE_NAME));
 		try {
 			oreGenConfig.load();
