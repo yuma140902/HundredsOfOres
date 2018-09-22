@@ -7,13 +7,13 @@ import yuma140902.hundredsofores.orefamilies.core.OreFamilyMemberBlockBase;
 import yuma140902.hundredsofores.orefamilies.core.OreID;
 import yuma140902.hundredsofores.util.StringUtil;
 
-public class BlockCompressedIngot extends OreFamilyMemberBlockBase {
+public class BlockCompressedBlock extends OreFamilyMemberBlockBase {
 
-	public BlockCompressedIngot(String oreName) {
+	public BlockCompressedBlock(String oreName) {
 		this(new OreID(oreName));
 	}
 	
-	public BlockCompressedIngot(OreID oreName) {
+	public BlockCompressedBlock(OreID oreName) {
 		super(oreName);
 		this.setHarvestLevel("pickaxe", 0);
 		this.setHardness(5.0F);

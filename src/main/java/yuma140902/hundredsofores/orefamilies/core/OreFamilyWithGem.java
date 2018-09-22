@@ -28,13 +28,13 @@ public class OreFamilyWithGem extends OreFamily {
 	public void init() {
 		super.init();
 		
-		Block block = blockCompressedIngot;
+		Block block = blockCompressedBlock;
 		Block ore = blockOre;
 		Item dust = itemDust;
 		Item gem = itemGem;
 		Item gear = itemGear;
 		
-		String blockOredict = blockCompressedIngot.getOreDictionaryKey();
+		String blockOredict = blockCompressedBlock.getOreDictionaryKey();
 		String ingotOredict = itemGem.getOreDictionaryKey();
 		
 		// ブロックの解凍

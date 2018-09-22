@@ -31,14 +31,14 @@ public class OreFamilyWithIngot extends OreFamily {
 	public void init() {
 		super.init();
 		
-		Block block = blockCompressedIngot;
+		Block block = blockCompressedBlock;
 		Block ore = blockOre;
 		Item dust = itemDust;
 		Item ingot = itemIngot;
 		Item gear = itemGear;
 		Item nugget = itemNugget;
 		
-		String blockOredict = blockCompressedIngot.getOreDictionaryKey();
+		String blockOredict = blockCompressedBlock.getOreDictionaryKey();
 		String ingotOredict = itemIngot.getOreDictionaryKey();
 		String nuggetOredict = itemNugget.getOreDictionaryKey();
 		

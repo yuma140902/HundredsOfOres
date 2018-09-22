@@ -4,7 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import yuma140902.hundredsofores.orefamilies.BlockCompressedIngot;
+import yuma140902.hundredsofores.orefamilies.BlockCompressedBlock;
 import yuma140902.hundredsofores.orefamilies.BlockOre;
 import yuma140902.hundredsofores.orefamilies.ItemDust;
 import yuma140902.hundredsofores.orefamilies.ItemGear;
@@ -25,7 +25,7 @@ public class OreFamily {
 	
 	protected BlockOre blockOre;
 	protected ItemDust itemDust;
-	protected BlockCompressedIngot blockCompressedIngot;
+	protected BlockCompressedBlock blockCompressedBlock;
 	protected ItemGear itemGear;
 	
 	public OreFamily(String oreName) {
@@ -36,7 +36,7 @@ public class OreFamily {
 		this._oreName = oreName;
 		this.blockOre = new BlockOre(oreName);
 		this.itemDust = new ItemDust(oreName);
-		this.blockCompressedIngot = new BlockCompressedIngot(oreName);
+		this.blockCompressedBlock = new BlockCompressedBlock(oreName);
 		this.itemGear = new ItemGear(oreName);
 	}
 	
@@ -81,8 +81,8 @@ public class OreFamily {
 		return itemDust;
 	}
 	
-	public BlockCompressedIngot getBlockCompressedIngot() {
-		return blockCompressedIngot;
+	public BlockCompressedBlock getBlockCompressedIngot() {
+		return blockCompressedBlock;
 	}
 
 	public ItemGear getItemGear() {
