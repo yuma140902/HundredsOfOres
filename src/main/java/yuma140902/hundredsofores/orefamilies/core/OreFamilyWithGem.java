@@ -1,5 +1,6 @@
 package yuma140902.hundredsofores.orefamilies.core;
 
+import javax.annotation.Nonnull;
 import yuma140902.hundredsofores.orefamilies.ItemGem;
 
 public class OreFamilyWithGem extends OreFamilyWithGemOrIngot {
@@ -18,7 +19,7 @@ public class OreFamilyWithGem extends OreFamilyWithGemOrIngot {
 		itemGem.register();
 	}
 	
-	protected ItemGem itemGem;
+	protected @Nonnull ItemGem itemGem;
 	
 	public ItemGem getItemGem() {
 		return itemGem;

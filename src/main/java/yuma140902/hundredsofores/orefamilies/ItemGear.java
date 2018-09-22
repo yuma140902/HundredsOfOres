@@ -1,5 +1,6 @@
 package yuma140902.hundredsofores.orefamilies;
 
+import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
@@ -17,7 +18,7 @@ public class ItemGear extends OreFamilyMemberItemBase {
 		super(oreName);
 	}
 	
-	private final String _oreDictKey = "gear" + StringUtil.ToCase_XxxXxx(_oreName); 
+	private final @Nonnull String _oreDictKey = "gear" + StringUtil.ToCase_XxxXxx(_oreName); 
 	@Override
 	public String getOreDictionaryKey() {
 		return _oreDictKey;

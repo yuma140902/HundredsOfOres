@@ -1,5 +1,6 @@
 package yuma140902.hundredsofores.orefamilies.core;
 
+import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -38,16 +39,14 @@ public class OreFamilyWithIngot extends OreFamilyWithGemOrIngot {
 		
 		// ナゲットからインゴット
 		GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nugget));
-		if (nuggetOredict != null)
-			GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nuggetOredict));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nuggetOredict));
 		
 		// インゴットからナゲット
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingot));
-		if (ingotOredict != null)
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingotOredict));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingotOredict));
 	}
 	
-	protected ItemIngot itemIngot;
+	protected @Nonnull ItemIngot itemIngot;
 	protected ItemNugget itemNugget;
 	
 	public ItemIngot getItemIngot() {

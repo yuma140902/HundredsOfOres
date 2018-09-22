@@ -1,5 +1,6 @@
 package yuma140902.hundredsofores.orefamilies;
 
+import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
@@ -91,6 +92,7 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 		return oreGenConfig;
 	}
 	
+	@Nonnull
 	private final String _oreDictKey = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
 	
 	@Override
