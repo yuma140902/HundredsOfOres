@@ -71,7 +71,7 @@ public final class OreFamilies {
 	public static final OreFamily silver = new OreFamilyWithIngot(SILVER_NAME);
 	public static final OreFamily lead = new OreFamilyWithIngot(LEAD_NAME);
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
-		blockOre.setOreGenConfigDefaultSpawnTries(0);
+		blockOre.setOreGemConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
 	public static final OreFamily ruby = new OreFamilyWithGem(RUBY_NAME);
 }
