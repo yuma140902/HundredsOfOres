@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.orefamilies.ItemIngot;
+import yuma140902.hundredsofores.orefamilies.ItemNugget;
 
 public class OreFamilyWithIngot extends OreFamily {
 	public OreFamilyWithIngot(String oreName) {
@@ -29,6 +30,8 @@ public class OreFamilyWithIngot extends OreFamily {
 		super.init();
 		
 		Block block = blockCompressedIngot;
+		Block ore = blockOre;
+		Item dust = itemDust;
 		Item ingot = itemIngot;
 		Item gear = itemGear;
 		Item nugget = itemNugget;
@@ -62,8 +65,13 @@ public class OreFamilyWithIngot extends OreFamily {
 	}
 	
 	protected ItemIngot itemIngot;
+	protected ItemNugget itemNugget;
 	
 	public ItemIngot getItemIngot() {
 		return itemIngot;
+	}
+	
+	public ItemNugget getItemNugget() {
+		return itemNugget;
 	}
 }
