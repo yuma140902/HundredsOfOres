@@ -26,7 +26,7 @@ public final class OreFamilies {
 			oreGenConfig.load();
 			
 			String[] globalDimensionBlackListStr = 
-					oreGenConfig.getStringList("GlobalDimensionBlackList", "ore_gen", 
+					oreGenConfig.getStringList("GlobalDimensionBlackList", "gen_common", 
 							new String[] {"1", "-1"}, "鉱石を生成しないディメンションIDを指定します。すべての鉱石に適応されます");
 			globalDimensionBlackList = ListUtil.ToIntList(globalDimensionBlackListStr);
 			

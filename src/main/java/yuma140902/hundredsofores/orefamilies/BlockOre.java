@@ -64,19 +64,23 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 	public void loadConfig(Configuration cfg) {
 		String oreNameLiteral = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
 		boolean isOrdinaryGenEnabled = cfg.getBoolean(
-				oreNameLiteral + "_isDefaultGenEnabled", "ore_gen", oreGemConfigDefaultIsOrdinaryGenEnabled,
+				oreNameLiteral + "_isDefaultGenEnabled", "gen_" + oreNameLiteral, oreGemConfigDefaultIsOrdinaryGenEnabled,
 				oreNameLiteral + "の標準の生成が有効になっているかどうか");
 		int spawnTries = cfg.getInt(
-				oreNameLiteral + "_SpawnTries", "ore_gen", oreGenConfigDefaultSpawnTries, 0, 1024, oreNameLiteral + "の生成確率");
+				oreNameLiteral + "_SpawnTries", "gen_" + oreNameLiteral, oreGenConfigDefaultSpawnTries, 0, 1024,
+				oreNameLiteral + "の生成確率");
 		int spawnSize = cfg.getInt(
-				oreNameLiteral + "_SpawnSize", "ore_gen", oreGenConfigDefaultSpawnSize, 0, 1024, oreNameLiteral + "が一度に生成される数");
+				oreNameLiteral + "_SpawnSize", "gen_" + oreNameLiteral, oreGenConfigDefaultSpawnSize, 0, 1024,
+				oreNameLiteral + "が一度に生成される数");
 		int maxHeight = cfg.getInt(
-				oreNameLiteral + "_MaxHeight", "ore_gen", oreGenConfigDefaultMaxHeight, 0, 256, oreNameLiteral + "が生成される最高の高さ");
+				oreNameLiteral + "_MaxHeight", "gen_" + oreNameLiteral, oreGenConfigDefaultMaxHeight, 0, 256,
+				oreNameLiteral + "が生成される最高の高さ");
 		int minHeight = cfg.getInt(
-				oreNameLiteral + "_MinHeight", "ore_gen", oreGenConfigDefaultMinHeight, 0, 256, oreNameLiteral + "が生成される最低の高さ");
+				oreNameLiteral + "_MinHeight", "gen_" + oreNameLiteral, oreGenConfigDefaultMinHeight, 0, 256,
+				oreNameLiteral + "が生成される最低の高さ");
 		
 		String[] dimensionBlackListStr = cfg.getStringList(
-				oreNameLiteral + "_dimensionBlackList", "ore_gen", oreGenConfigDefaultDimensionBlackListStr,
+				oreNameLiteral + "_dimensionBlackList", "gen_" + oreNameLiteral, oreGenConfigDefaultDimensionBlackListStr,
 				oreNameLiteral + "を生成しないディメンションID");
 		
 		if (isOrdinaryGenEnabled) {
