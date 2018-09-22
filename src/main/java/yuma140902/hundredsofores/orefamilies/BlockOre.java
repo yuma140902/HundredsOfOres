@@ -1,6 +1,7 @@
 package yuma140902.hundredsofores.orefamilies;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
@@ -15,7 +16,7 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 	
 	private static final int DEFAULT_HARVEST_LEVEL = 0;
 	
-	protected OreGenConfig oreGenConfig;
+	protected @Nullable OreGenConfig oreGenConfig;
 	
 	protected boolean oreGemConfigDefaultIsOrdinaryGenEnabled = true;
 	protected int oreGenConfigDefaultSpawnTries = 20;
@@ -88,7 +89,7 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 		}
 	}
 	
-	public OreGenConfig getOreGeneratorConfig() {
+	public @Nullable OreGenConfig getOreGeneratorConfig() {
 		return oreGenConfig;
 	}
 	
