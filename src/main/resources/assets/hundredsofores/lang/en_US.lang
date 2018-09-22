@@ -36,3 +36,9 @@ item.hundredsOfOres.silver_nugget.name=Silver Nugget
 item.hundredsOfOres.tin_nugget.name=Tin Nugget
 
 item.hundredsOfOres.ruby_gem.name=Ruby
+
+item.hundredsOfOres.copper_pickaxe.name=Copper Pickaxe
+item.hundredsOfOres.lead_pickaxe.name=Lead Pickaxe
+item.hundredsOfOres.ruby_pickaxe.name=Ruby Pickaxe
+item.hundredsOfOres.silver_pickaxe.name=Silver Pickaxe
+item.hundredsOfOres.tin_pickaxe.name=Tin Pickaxe
