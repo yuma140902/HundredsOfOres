@@ -107,14 +107,14 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		GameRegistry.addRecipe(new ShapedOreRecipe(
 				gear, 
 				" # ", 
-				"# #", 
+				"###", 
 				" # ", 
 				'#', gem_ingot
 				));
 		GameRegistry.addRecipe(new ShapedOreRecipe(
 				gear, 
 				" # ", 
-				"# #", 
+				"###", 
 				" # ", 
 				'#', gem_ingotOredict
 				));
