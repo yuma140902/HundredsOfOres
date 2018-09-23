@@ -4,6 +4,10 @@ public final class Recipes {
 	private Recipes() {}
 	
 	public static void register() {
+		registerAlloyRecipes();
+	}
+	
+	private static void registerAlloyRecipes() {
 		
 	}
 }
