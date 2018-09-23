@@ -3,10 +3,8 @@ package yuma140902.hundredsofores.recipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import yuma140902.hundredsofores.MyItems;
-import yuma140902.hundredsofores.orefamilies.core.OreFamily;
 
 public final class Recipes {
 	private Recipes() {}
@@ -34,7 +32,7 @@ public final class Recipes {
 		RecipeRegisterHelper.addRecipeIngotToDust(Items.gold_ingot, MyItems.goldDust);
 		RecipeRegisterHelper.addRecipeIngotToDust("ingotGold", MyItems.goldDust);
 		
-		GameRegistry.addSmelting(MyItems.goldDust, new ItemStack(Items.gold_ingot), OreFamily.DEFAULT_FURANCE_EXP);
+		RecipeRegisterHelper.addSmeltingDustToIngot(MyItems.goldDust, Items.gold_ingot);
 	}
 	
 	private static void registerAlloyRecipes() {

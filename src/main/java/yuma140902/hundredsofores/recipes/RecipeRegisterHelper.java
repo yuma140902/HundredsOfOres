@@ -12,6 +12,8 @@ import yuma140902.hundredsofores.MyItems;
 public final class RecipeRegisterHelper {
 	private RecipeRegisterHelper() {}
 	
+	public static final float DEFAULT_FURANCE_EXP = 10.0F; // TODO 10.0Fは適当
+	
 	public static final ItemStack HUMMER = new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE);
 	
 	//鉱石から粉2つに
@@ -74,5 +76,16 @@ public final class RecipeRegisterHelper {
 				new ItemStack(gem_ingot, 9), 
 				blockOreDictionaryKey
 				));
+	}
+	
+	
+	//鉱石を精錬してジェムOrインゴット
+	public static void addSmeltingOreToIngot(Block ore, Item gem_ingot) {
+		GameRegistry.addSmelting(ore, new ItemStack(gem_ingot), DEFAULT_FURANCE_EXP);
+	}
+	
+	//粉を精錬してジェムOrインゴット
+	public static void addSmeltingDustToIngot(Item dust, Item gem_ingot) {
+		GameRegistry.addSmelting(dust, new ItemStack(gem_ingot), DEFAULT_FURANCE_EXP);
 	}
 }

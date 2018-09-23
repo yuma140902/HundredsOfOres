@@ -125,9 +125,9 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		RecipeRegisterHelper.addRecipeIngotToDust(gem_ingotOredict, dust);
 		
 		// 鉱石を精錬してジェムOrインゴット
-		GameRegistry.addSmelting(ore, new ItemStack(gem_ingot), OreFamily.DEFAULT_FURANCE_EXP);
+		RecipeRegisterHelper.addSmeltingOreToIngot(ore, gem_ingot);
 		// 粉を精錬してジェムOrインゴット
-		GameRegistry.addSmelting(dust, new ItemStack(gem_ingot), OreFamily.DEFAULT_FURANCE_EXP);
+		RecipeRegisterHelper.addSmeltingDustToIngot(dust, gem_ingot);
 	}
 	
 	public abstract @Nonnull OreFamilyMemberItemBase getGemOrIngot();

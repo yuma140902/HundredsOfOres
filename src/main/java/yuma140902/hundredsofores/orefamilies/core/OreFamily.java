@@ -17,8 +17,6 @@ import yuma140902.hundredsofores.worldGen.WorldGenerators;
  */
 public class OreFamily {
 	
-	public static final float DEFAULT_FURANCE_EXP = 10.0F; // TODO 10.0Fは適当
-	
 	private OreID _oreName;
 	
 	protected BlockOre blockOre;
