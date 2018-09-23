@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import yuma140902.hundredsofores.creativeTabs.HOOCreativeTab;
 import yuma140902.hundredsofores.orefamilies.core.OreFamilies;
+import yuma140902.hundredsofores.recipes.Recipes;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 
 @Mod(modid = ModHundredsOfOres.MOD_ID, useMetadata = true)
