@@ -3,7 +3,9 @@ package yuma140902.hundredsofores.orefamilies.core;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import yuma140902.hundredsofores.MyItems;
 import yuma140902.hundredsofores.orefamilies.BlockCompressedBlock;
 import yuma140902.hundredsofores.orefamilies.BlockOre;
 import yuma140902.hundredsofores.orefamilies.ItemDust;
@@ -47,9 +49,13 @@ public class OreFamily {
 		
 		String oreOredict = ore.getOreDictionaryKey();
 		
-		// 鉱石から粉2つ TODO: 独自の粉砕機を実装したい
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust, 2), ore));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust, 2), oreOredict));
+		// 鉱石から粉2つ TODO: 独自の粉砕機も実装したい
+		GameRegistry.addRecipe(
+				new ShapelessOreRecipe(
+						new ItemStack(dust, 2), ore, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(
+				new ShapelessOreRecipe(
+						new ItemStack(dust, 2), oreOredict, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
 	}
 	
 	public void register() {
@@ -71,11 +77,11 @@ public class OreFamily {
 	public OreID getOreId() {
 		return this._oreName;
 	}
-
+	
 	public BlockOre getBlockOre() {
 		return blockOre;
 	}
-
+	
 	public ItemDust getItemDust() {
 		return itemDust;
 	}
@@ -83,7 +89,7 @@ public class OreFamily {
 	public BlockCompressedBlock getBlockCompressedIngot() {
 		return blockCompressedBlock;
 	}
-
+	
 	public ItemGear getItemGear() {
 		return itemGear;
 	}
