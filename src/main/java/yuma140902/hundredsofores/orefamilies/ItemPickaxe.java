@@ -26,7 +26,6 @@ public class ItemPickaxe extends net.minecraft.item.ItemPickaxe implements IOreF
 	@Override
 	public void register() {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
-		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_pickaxe");
 		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_pickaxe");
 		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_pickaxe");
