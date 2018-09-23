@@ -26,6 +26,7 @@ public class ItemNugget extends OreFamilyMemberItemBase {
 	
 	@Override
 	public void register() {
+		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_nugget");
 		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_nugget");
 		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_nugget");

@@ -26,7 +26,6 @@ public class ItemGem extends OreFamilyMemberItemBase {
 	@Override
 	public void register() {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
-		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
 		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_gem");
 		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_gem");
 		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_gem");
