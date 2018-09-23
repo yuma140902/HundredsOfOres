@@ -14,7 +14,7 @@ public final class Recipes {
 				"#|#",
 				"vvv",
 				'|', Items.stick,
-				'#', "ingotCopper",
+				'#', "gemRuby",
 				'v', Items.flint
 				));
 	}
