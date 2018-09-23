@@ -88,7 +88,7 @@ public final class OreFamilies {
 	}};
 	public static final OreFamilyWithGemOrIngot lead = new OreFamilyWithIngot(LEAD_NAME);
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
-		blockOre.setOreGemConfigDefaultIsOrdinaryGenEnabled(false);
+		blockOre.setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
 	public static final OreFamilyWithGemOrIngot ruby = new OreFamilyWithGem(RUBY_NAME) {{
 		blockOre.setOreGenConfigDefaultSpawnTries(10);

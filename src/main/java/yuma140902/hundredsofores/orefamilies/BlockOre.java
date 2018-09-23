@@ -18,15 +18,15 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 	
 	protected @Nullable OreGenConfig oreGenConfig;
 	
-	protected boolean oreGemConfigDefaultIsOrdinaryGenEnabled = true;
+	protected boolean oreGenConfigDefaultIsOrdinaryGenEnabled = true;
 	protected int oreGenConfigDefaultSpawnTries = 20;
 	protected int oreGenConfigDefaultSpawnSize = 8;
 	protected int oreGenConfigDefaultMaxHeight = 64;
 	protected int oreGenConfigDefaultMinHeight = 0;
 	protected String[] oreGenConfigDefaultDimensionBlackListStr = new String[] {};
 	
-	public void setOreGemConfigDefaultIsOrdinaryGenEnabled(boolean value) {
-		this.oreGemConfigDefaultIsOrdinaryGenEnabled = value;
+	public void setOreGenConfigDefaultIsOrdinaryGenEnabled(boolean value) {
+		this.oreGenConfigDefaultIsOrdinaryGenEnabled = value;
 	}
 	
 	public void setOreGenConfigDefaultSpawnTries(int value) {
@@ -64,7 +64,7 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 	public void loadConfig(Configuration cfg) {
 		String oreNameLiteral = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
 		boolean isOrdinaryGenEnabled = cfg.getBoolean(
-				oreNameLiteral + "_isDefaultGenEnabled", "gen_" + oreNameLiteral, oreGemConfigDefaultIsOrdinaryGenEnabled,
+				oreNameLiteral + "_isDefaultGenEnabled", "gen_" + oreNameLiteral, oreGenConfigDefaultIsOrdinaryGenEnabled,
 				oreNameLiteral + "の標準の生成が有効になっているかどうか");
 		int spawnTries = cfg.getInt(
 				oreNameLiteral + "_SpawnTries", "gen_" + oreNameLiteral, oreGenConfigDefaultSpawnTries, 0, 1024,
