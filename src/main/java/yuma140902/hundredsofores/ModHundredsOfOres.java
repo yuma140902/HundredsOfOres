@@ -61,6 +61,7 @@ public class ModHundredsOfOres {
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
 		OreFamilies.init();
+		Recipes.register();
 		OreFamilies.registerToWorldGenerators();
 		WorldGenerators.register();
 	}
