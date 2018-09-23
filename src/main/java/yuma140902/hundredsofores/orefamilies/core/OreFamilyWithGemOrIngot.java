@@ -24,11 +24,11 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		super(oreName);
 	}
 	
-	protected int toolConfigDefaultHarvestLevel = 1;
-	protected int toolConfigDefaultMaxUses = 128;
-	protected float toolConfigDefaultEfficiency = 5;
-	protected float toolConfigDefaultDamage = 0;
-	protected int toolConfigDefaultEnchantability = 2;
+	protected int toolConfigDefaultHarvestLevel = 2;
+	protected int toolConfigDefaultMaxUses = 300;
+	protected float toolConfigDefaultEfficiency = 7.0F;
+	protected float toolConfigDefaultDamage = 0.0F;
+	protected int toolConfigDefaultEnchantability = 14;
 	
 	protected ItemPickaxe itemPickaxe;
 	protected ToolMaterial material;
