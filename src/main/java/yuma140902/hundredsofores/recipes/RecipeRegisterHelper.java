@@ -25,6 +25,19 @@ public final class RecipeRegisterHelper {
 				oreOreDictionaryKey, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
 	}
 	
+	//インゴットから粉1つに
+	public static void addRecipeIngotToDust(Item gem_ingot, Item dust) {
+		GameRegistry.addRecipe(new ShapelessOreRecipe(
+				dust,
+				gem_ingot, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+	}
+	
+	public static void addRecipeIngotToDust(String gem_ingotOreDictionaryKey, Item dust) {
+		GameRegistry.addRecipe(new ShapelessOreRecipe(
+				dust,
+				gem_ingotOreDictionaryKey, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+	}
+	
 	//ブロックへ圧縮
 	public static void addRecipeBlockCompress(Item gem_ingot, Block block) {
 		GameRegistry.addRecipe(new ShapedOreRecipe(

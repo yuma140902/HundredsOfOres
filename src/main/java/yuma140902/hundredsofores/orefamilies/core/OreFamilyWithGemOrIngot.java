@@ -9,11 +9,8 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.MyItems;
 import yuma140902.hundredsofores.orefamilies.ItemPickaxe;
 import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
 import yuma140902.hundredsofores.util.StringUtil;
@@ -123,12 +120,9 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 				'|', Items.stick
 				));
 		
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				dust,
-				gem_ingot, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				dust,
-				gem_ingotOredict, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+		//ジェムOrインゴットから粉
+		RecipeRegisterHelper.addRecipeIngotToDust(gem_ingot, dust);
+		RecipeRegisterHelper.addRecipeIngotToDust(gem_ingotOredict, dust);
 		
 		// 鉱石を精錬してジェムOrインゴット
 		GameRegistry.addSmelting(ore, new ItemStack(gem_ingot), OreFamily.DEFAULT_FURANCE_EXP);

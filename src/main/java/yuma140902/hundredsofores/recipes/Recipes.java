@@ -4,9 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.MyItems;
 import yuma140902.hundredsofores.orefamilies.core.OreFamily;
 
@@ -33,12 +31,8 @@ public final class Recipes {
 		RecipeRegisterHelper.addRecipeOreToDust(Blocks.gold_ore, MyItems.goldDust);
 		RecipeRegisterHelper.addRecipeOreToDust("oreGold", MyItems.goldDust);
 		
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				MyItems.goldDust,
-				Items.gold_ingot, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				MyItems.goldDust,
-				"ingotGold", new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+		RecipeRegisterHelper.addRecipeIngotToDust(Items.gold_ingot, MyItems.goldDust);
+		RecipeRegisterHelper.addRecipeIngotToDust("ingotGold", MyItems.goldDust);
 		
 		GameRegistry.addSmelting(MyItems.goldDust, new ItemStack(Items.gold_ingot), OreFamily.DEFAULT_FURANCE_EXP);
 	}
