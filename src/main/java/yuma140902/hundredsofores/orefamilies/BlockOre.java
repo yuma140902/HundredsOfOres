@@ -19,7 +19,7 @@ public class BlockOre extends OreFamilyMemberBlockBase {
 	protected @Nullable OreGenConfig oreGenConfig;
 	
 	protected boolean oreGemConfigDefaultIsOrdinaryGenEnabled = true;
-	protected int oreGenConfigDefaultSpawnTries = 10;
+	protected int oreGenConfigDefaultSpawnTries = 20;
 	protected int oreGenConfigDefaultSpawnSize = 8;
 	protected int oreGenConfigDefaultMaxHeight = 64;
 	protected int oreGenConfigDefaultMinHeight = 0;

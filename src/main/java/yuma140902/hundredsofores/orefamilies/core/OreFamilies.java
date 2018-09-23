@@ -83,10 +83,14 @@ public final class OreFamilies {
 	
 	public static final OreFamilyWithGemOrIngot tin = new OreFamilyWithIngot(TIN_NAME);
 	public static final OreFamilyWithGemOrIngot copper = new OreFamilyWithIngot(COPPER_NAME);
-	public static final OreFamilyWithGemOrIngot silver = new OreFamilyWithIngot(SILVER_NAME);
+	public static final OreFamilyWithGemOrIngot silver = new OreFamilyWithIngot(SILVER_NAME) {{
+		blockOre.setOreGenConfigDefaultSpawnTries(10);
+	}};
 	public static final OreFamilyWithGemOrIngot lead = new OreFamilyWithIngot(LEAD_NAME);
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
 		blockOre.setOreGemConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
-	public static final OreFamilyWithGemOrIngot ruby = new OreFamilyWithGem(RUBY_NAME);
+	public static final OreFamilyWithGemOrIngot ruby = new OreFamilyWithGem(RUBY_NAME) {{
+		blockOre.setOreGenConfigDefaultSpawnTries(10);
+	}};
 }
