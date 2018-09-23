@@ -12,30 +12,32 @@ import yuma140902.hundredsofores.MyItems;
 public final class RecipeRegisterHelper {
 	private RecipeRegisterHelper() {}
 	
+	public static final ItemStack HUMMER = new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE);
+	
 	//鉱石から粉2つに
 	public static void addRecipeOreToDust(Block ore, Item dust) {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 			new ItemStack(dust, 2), 
-			ore, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+			ore, HUMMER));
 	}
 	
 	public static void addRecipeOreToDust(String oreOreDictionaryKey, Item dust) {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				new ItemStack(dust, 2), 
-				oreOreDictionaryKey, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+				oreOreDictionaryKey, HUMMER));
 	}
 	
 	//インゴットから粉1つに
 	public static void addRecipeIngotToDust(Item gem_ingot, Item dust) {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				dust,
-				gem_ingot, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+				gem_ingot, HUMMER));
 	}
 	
 	public static void addRecipeIngotToDust(String gem_ingotOreDictionaryKey, Item dust) {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				dust,
-				gem_ingotOreDictionaryKey, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+				gem_ingotOreDictionaryKey, HUMMER));
 	}
 	
 	//ブロックへ圧縮
