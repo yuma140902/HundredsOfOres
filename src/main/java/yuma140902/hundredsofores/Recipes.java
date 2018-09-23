@@ -18,7 +18,13 @@ public final class Recipes {
 				'v', Items.flint
 				));
 		
+		registerDustRecipes();
 		registerAlloyRecipes();
+	}
+	
+	// OreFamilyで登録されない粉(金の粉など)のレシピを追加します。
+	private static void registerDustRecipes() {
+		
 	}
 	
 	private static void registerAlloyRecipes() {
