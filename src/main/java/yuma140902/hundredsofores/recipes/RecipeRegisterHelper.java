@@ -45,4 +45,19 @@ public final class RecipeRegisterHelper {
 				'#', gem_ingotOreDictionaryKey
 				));
 	}
+	
+	//ブロックを解凍
+	public static void addRecipeBlockExpand(Block block, Item gem_ingot) {
+		GameRegistry.addRecipe(new ShapelessOreRecipe(
+				new ItemStack(gem_ingot, 9), 
+				block
+				));
+	}
+	
+	public static void addRecipeBlockExpand(String blockOreDictionaryKey, Item gem_ingot) {
+		GameRegistry.addRecipe(new ShapelessOreRecipe(
+				new ItemStack(gem_ingot, 9), 
+				blockOreDictionaryKey
+				));
+	}
 }

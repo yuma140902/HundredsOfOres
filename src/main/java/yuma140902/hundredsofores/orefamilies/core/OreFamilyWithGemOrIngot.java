@@ -82,14 +82,8 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		String gem_ingotOredict = getGemOrIngot().getOreDictionaryKey();
 		
 		// ブロックの解凍
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				new ItemStack(gem_ingot, 9), 
-				block
-				));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				new ItemStack(gem_ingot, 9), 
-				blockOredict
-				));
+		RecipeRegisterHelper.addRecipeBlockExpand(block, gem_ingot);
+		RecipeRegisterHelper.addRecipeBlockExpand(blockOredict, gem_ingot);
 		
 		// ブロックへ圧縮
 		RecipeRegisterHelper.addRecipeBlockCompress(gem_ingot, block);
