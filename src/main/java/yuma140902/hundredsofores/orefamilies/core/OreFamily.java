@@ -1,15 +1,11 @@
 package yuma140902.hundredsofores.orefamilies.core;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
-import yuma140902.hundredsofores.MyItems;
 import yuma140902.hundredsofores.orefamilies.BlockCompressedBlock;
 import yuma140902.hundredsofores.orefamilies.BlockOre;
 import yuma140902.hundredsofores.orefamilies.ItemDust;
 import yuma140902.hundredsofores.orefamilies.ItemGear;
+import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 
 /**
@@ -50,12 +46,8 @@ public class OreFamily {
 		String oreOredict = ore.getOreDictionaryKey();
 		
 		// 鉱石から粉2つ TODO: 独自の粉砕機も実装したい
-		GameRegistry.addRecipe(
-				new ShapelessOreRecipe(
-						new ItemStack(dust, 2), ore, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
-		GameRegistry.addRecipe(
-				new ShapelessOreRecipe(
-						new ItemStack(dust, 2), oreOredict, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+		RecipeRegisterHelper.addRecipeOreToDust(ore, dust);
+		RecipeRegisterHelper.addRecipeOreToDust(oreOredict, dust);
 	}
 	
 	public void register() {

@@ -30,12 +30,8 @@ public final class Recipes {
 	
 	// OreFamilyで登録されない粉(金の粉など)のレシピを追加します。
 	private static void registerDustRecipes() {
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				new ItemStack(MyItems.goldDust, 2),
-				Blocks.gold_ore, new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				new ItemStack(MyItems.goldDust, 2),
-				"oreGold", new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+		RecipeRegisterHelper.addRecipeOreToDust(Blocks.gold_ore, MyItems.goldDust);
+		RecipeRegisterHelper.addRecipeOreToDust("oreGold", MyItems.goldDust);
 		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				MyItems.goldDust,
