@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import yuma140902.hundredsofores.orefamilies.core.OreFamily;
 
 public final class Recipes {
 	private Recipes() {}
@@ -41,6 +42,8 @@ public final class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				MyItems.goldDust,
 				"ingotGold", new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE)));
+		
+		GameRegistry.addSmelting(MyItems.goldDust, new ItemStack(Items.gold_ingot), OreFamily.DEFAULT_FURANCE_EXP);
 	}
 	
 	private static void registerAlloyRecipes() {
