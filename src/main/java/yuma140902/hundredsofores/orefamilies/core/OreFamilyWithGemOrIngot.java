@@ -15,6 +15,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.ModHundredsOfOres;
 import yuma140902.hundredsofores.MyItems;
 import yuma140902.hundredsofores.orefamilies.ItemPickaxe;
+import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
 import yuma140902.hundredsofores.util.StringUtil;
 
 public abstract class OreFamilyWithGemOrIngot extends OreFamily {
@@ -91,20 +92,8 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 				));
 		
 		// ブロックへ圧縮
-		GameRegistry.addRecipe(new ShapedOreRecipe(
-				block, 
-				"###", 
-				"###", 
-				"###", 
-				'#', gem_ingot
-				));
-		GameRegistry.addRecipe(new ShapedOreRecipe(
-				block, 
-				"###", 
-				"###", 
-				"###", 
-				'#', gem_ingotOredict
-				));
+		RecipeRegisterHelper.addRecipeBlockCompress(gem_ingot, block);
+		RecipeRegisterHelper.addRecipeBlockCompress(gem_ingotOredict, block);
 		
 		// ジェムOrインゴットからギア
 		GameRegistry.addRecipe(new ShapedOreRecipe(
