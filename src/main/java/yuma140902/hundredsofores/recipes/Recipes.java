@@ -4,7 +4,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.MyItems;
+import yuma140902.hundredsofores.orefamilies.core.OreFamilies;
 
 public final class Recipes {
 	private Recipes() {}
@@ -36,6 +38,12 @@ public final class Recipes {
 	}
 	
 	private static void registerAlloyRecipes() {
-		
+		GameRegistry.addRecipe(new ShapelessOreRecipe(
+				MyItems.electrumDust, 
+				MyItems.goldDust, 
+				OreFamilies.silver.getItemDust(), 
+				OreFamilies.silver.getItemDust(), 
+				OreFamilies.silver.getItemDust()
+		));
 	}
 }
