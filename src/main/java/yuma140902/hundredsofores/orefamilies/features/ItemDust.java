@@ -4,11 +4,11 @@ import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.orefamilies.OreFamilyMemberItemBase;
+import yuma140902.hundredsofores.orefamilies.OreFamilyFeatureItemBase;
 import yuma140902.hundredsofores.orefamilies.OreID;
 import yuma140902.hundredsofores.util.StringUtil;
 
-public class ItemDust extends OreFamilyMemberItemBase {
+public class ItemDust extends OreFamilyFeatureItemBase {
 	
 	public ItemDust(String oreName) {
 		this(new OreID(oreName));

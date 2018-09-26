@@ -20,7 +20,7 @@ public class OreFamilyWithGem extends OreFamilyWithGemOrIngot {
 	}
 
 	@Override
-	public OreFamilyMemberItemBase getGemOrIngot() {
+	public OreFamilyFeatureItemBase getGemOrIngot() {
 		return itemGem;
 	}
 }

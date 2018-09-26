@@ -130,7 +130,7 @@ public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 		RecipeRegisterHelper.addSmeltingDustToIngot(dust, gem_ingot);
 	}
 	
-	public abstract @Nonnull OreFamilyMemberItemBase getGemOrIngot();
+	public abstract @Nonnull OreFamilyFeatureItemBase getGemOrIngot();
 	
 	public ItemPickaxe getItemPickaxe() {
 		return itemPickaxe;
