@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.MyItems;
-import yuma140902.hundredsofores.orefamilies.core.OreFamilies;
+import yuma140902.hundredsofores.orefamilies.OreFamilies;
 
 public final class Recipes {
 	private Recipes() {}

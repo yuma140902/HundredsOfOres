@@ -4,8 +4,8 @@ import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.orefamilies.core.OreFamilyMemberItemBase;
-import yuma140902.hundredsofores.orefamilies.core.OreID;
+import yuma140902.hundredsofores.orefamilies.OreFamilyMemberItemBase;
+import yuma140902.hundredsofores.orefamilies.OreID;
 import yuma140902.hundredsofores.util.StringUtil;
 
 public class ItemGear extends OreFamilyMemberItemBase {

@@ -6,9 +6,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.orefamilies.core.OreFamilyMemberBlockBase;
-import yuma140902.hundredsofores.orefamilies.core.OreGenConfig;
-import yuma140902.hundredsofores.orefamilies.core.OreID;
+import yuma140902.hundredsofores.orefamilies.OreFamilyMemberBlockBase;
+import yuma140902.hundredsofores.orefamilies.OreGenConfig;
+import yuma140902.hundredsofores.orefamilies.OreID;
 import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.StringUtil;
 

@@ -1,4 +1,4 @@
-package yuma140902.hundredsofores.orefamilies.core;
+package yuma140902.hundredsofores.orefamilies;
 
 import javax.annotation.Nonnull;
 import yuma140902.hundredsofores.orefamilies.features.ItemGem;

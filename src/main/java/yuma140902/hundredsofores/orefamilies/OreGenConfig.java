@@ -1,4 +1,4 @@
-package yuma140902.hundredsofores.orefamilies.core;
+package yuma140902.hundredsofores.orefamilies;
 
 public class OreGenConfig {
 	public OreGenConfig(int spawnTries, int spawnSize, int maxHeight, int minHeight, int... dimensionBlackList) {

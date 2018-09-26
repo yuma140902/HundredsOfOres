@@ -5,7 +5,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import yuma140902.hundredsofores.orefamilies.core.OreFamilies;
+import yuma140902.hundredsofores.orefamilies.OreFamilies;
 
 public class HOOCreativeTab extends CreativeTabs {
 	public HOOCreativeTab() {

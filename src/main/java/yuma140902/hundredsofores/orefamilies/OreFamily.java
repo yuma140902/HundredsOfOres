@@ -1,4 +1,4 @@
-package yuma140902.hundredsofores.orefamilies.core;
+package yuma140902.hundredsofores.orefamilies;
 
 import net.minecraftforge.common.config.Configuration;
 import yuma140902.hundredsofores.orefamilies.features.BlockCompressedBlock;

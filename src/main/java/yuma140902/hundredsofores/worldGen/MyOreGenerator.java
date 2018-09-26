@@ -9,8 +9,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import yuma140902.hundredsofores.orefamilies.core.OreFamilies;
-import yuma140902.hundredsofores.orefamilies.core.OreGenConfig;
+import yuma140902.hundredsofores.orefamilies.OreFamilies;
+import yuma140902.hundredsofores.orefamilies.OreGenConfig;
 import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.Pair;
 

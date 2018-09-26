@@ -1,6 +1,6 @@
 package yuma140902.hundredsofores.util;
 
-import yuma140902.hundredsofores.orefamilies.core.OreID;
+import yuma140902.hundredsofores.orefamilies.OreID;
 
 public final class StringUtil {
 	
