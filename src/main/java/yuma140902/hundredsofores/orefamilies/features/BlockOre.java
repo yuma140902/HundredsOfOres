@@ -6,13 +6,13 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.orefamilies.OreFamilyMemberBlockBase;
+import yuma140902.hundredsofores.orefamilies.OreFamilyFeatureBlockBase;
 import yuma140902.hundredsofores.orefamilies.OreGenConfig;
 import yuma140902.hundredsofores.orefamilies.OreID;
 import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.StringUtil;
 
-public class BlockOre extends OreFamilyMemberBlockBase {
+public class BlockOre extends OreFamilyFeatureBlockBase {
 	
 	private static final int DEFAULT_HARVEST_LEVEL = 0;
 	
