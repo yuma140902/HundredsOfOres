@@ -9,6 +9,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.orefamilies.features.ItemIngot;
 import yuma140902.hundredsofores.orefamilies.features.ItemNugget;
 
+@Deprecated
 public class OreFamilyWithIngot extends OreFamilyWithGemOrIngot {
 	public OreFamilyWithIngot(String oreName) {
 		this(new OreID(oreName));

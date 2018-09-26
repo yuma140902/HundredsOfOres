@@ -3,6 +3,7 @@ package yuma140902.hundredsofores.orefamilies;
 import javax.annotation.Nonnull;
 import yuma140902.hundredsofores.orefamilies.features.ItemGem;
 
+@Deprecated
 public class OreFamilyWithGem extends OreFamilyWithGemOrIngot {
 	public OreFamilyWithGem(String oreName) {
 		this(new OreID(oreName));

@@ -15,6 +15,7 @@ import yuma140902.hundredsofores.orefamilies.features.ItemPickaxe;
 import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
 import yuma140902.hundredsofores.util.StringUtil;
 
+@Deprecated
 public abstract class OreFamilyWithGemOrIngot extends OreFamily {
 	public OreFamilyWithGemOrIngot(String oreName) {
 		this(new OreID(oreName));
