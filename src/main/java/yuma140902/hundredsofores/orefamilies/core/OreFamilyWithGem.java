@@ -1,7 +1,7 @@
 package yuma140902.hundredsofores.orefamilies.core;
 
 import javax.annotation.Nonnull;
-import yuma140902.hundredsofores.orefamilies.ItemGem;
+import yuma140902.hundredsofores.orefamilies.features.ItemGem;
 
 public class OreFamilyWithGem extends OreFamilyWithGemOrIngot {
 	public OreFamilyWithGem(String oreName) {

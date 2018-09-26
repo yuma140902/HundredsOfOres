@@ -1,4 +1,4 @@
-package yuma140902.hundredsofores.orefamilies;
+package yuma140902.hundredsofores.orefamilies.features;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

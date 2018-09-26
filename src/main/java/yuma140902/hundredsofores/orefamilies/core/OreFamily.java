@@ -1,10 +1,10 @@
 package yuma140902.hundredsofores.orefamilies.core;
 
 import net.minecraftforge.common.config.Configuration;
-import yuma140902.hundredsofores.orefamilies.BlockCompressedBlock;
-import yuma140902.hundredsofores.orefamilies.BlockOre;
-import yuma140902.hundredsofores.orefamilies.ItemDust;
-import yuma140902.hundredsofores.orefamilies.ItemGear;
+import yuma140902.hundredsofores.orefamilies.features.BlockCompressedBlock;
+import yuma140902.hundredsofores.orefamilies.features.BlockOre;
+import yuma140902.hundredsofores.orefamilies.features.ItemDust;
+import yuma140902.hundredsofores.orefamilies.features.ItemGear;
 import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 

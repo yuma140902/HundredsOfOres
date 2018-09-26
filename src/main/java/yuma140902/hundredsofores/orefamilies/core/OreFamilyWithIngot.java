@@ -6,8 +6,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import yuma140902.hundredsofores.orefamilies.ItemIngot;
-import yuma140902.hundredsofores.orefamilies.ItemNugget;
+import yuma140902.hundredsofores.orefamilies.features.ItemIngot;
+import yuma140902.hundredsofores.orefamilies.features.ItemNugget;
 
 public class OreFamilyWithIngot extends OreFamilyWithGemOrIngot {
 	public OreFamilyWithIngot(String oreName) {

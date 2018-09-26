@@ -1,4 +1,4 @@
-package yuma140902.hundredsofores.orefamilies;
+package yuma140902.hundredsofores.orefamilies.features;
 
 import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -8,17 +8,17 @@ import yuma140902.hundredsofores.orefamilies.core.OreFamilyMemberItemBase;
 import yuma140902.hundredsofores.orefamilies.core.OreID;
 import yuma140902.hundredsofores.util.StringUtil;
 
-public class ItemIngot extends OreFamilyMemberItemBase {
+public class ItemNugget extends OreFamilyMemberItemBase {
 
-	public ItemIngot(String oreName) {
+	public ItemNugget(String oreName) {
 		this(new OreID(oreName));
 	}
 	
-	public ItemIngot(OreID oreName) {
+	public ItemNugget(OreID oreName) {
 		super(oreName);
 	}
 	
-	private final @Nonnull String _oreDictKey = "ingot" + StringUtil.ToCase_XxxXxx(_oreName); 
+	private final @Nonnull String _oreDictKey = "nugget" + StringUtil.ToCase_XxxXxx(_oreName); 
 	@Override
 	public String getOreDictionaryKey() {
 		return _oreDictKey;
@@ -27,9 +27,9 @@ public class ItemIngot extends OreFamilyMemberItemBase {
 	@Override
 	public void register() {
 		this.setCreativeTab(ModHundredsOfOres.MOD_CREATIVETAB);
-		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_ingot");
-		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_ingot");
-		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_ingot");
+		this.setUnlocalizedName(ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(_oreName) + "_nugget");
+		this.setTextureName(ModHundredsOfOres.MOD_ID + ":" + StringUtil.ToCase_xxx_xxx(_oreName) + "_nugget");
+		GameRegistry.registerItem(this, StringUtil.ToCase_xxx_xxx(_oreName) + "_nugget");
 		OreDictionary.registerOre(_oreDictKey, this);		
 	}
 	

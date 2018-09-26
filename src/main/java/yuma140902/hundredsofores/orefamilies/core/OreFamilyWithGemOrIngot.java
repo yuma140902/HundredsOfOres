@@ -11,7 +11,7 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.orefamilies.ItemPickaxe;
+import yuma140902.hundredsofores.orefamilies.features.ItemPickaxe;
 import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
 import yuma140902.hundredsofores.util.StringUtil;
 
