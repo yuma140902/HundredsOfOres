@@ -2,7 +2,7 @@ package yuma140902.hundredsofores.orefamilies;
 
 import net.minecraft.item.Item;
 
-public abstract class OreFamilyMemberItemBase extends Item implements IOreFamilyMember {
+public abstract class OreFamilyMemberItemBase extends Item implements IOreFamilyFeature {
 	
 	protected OreID _oreName;
 	
