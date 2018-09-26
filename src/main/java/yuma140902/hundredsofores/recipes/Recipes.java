@@ -3,6 +3,7 @@ package yuma140902.hundredsofores.recipes;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.MyItems;
@@ -39,7 +40,7 @@ public final class Recipes {
 	
 	private static void registerAlloyRecipes() {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				MyItems.electrumDust, 
+				new ItemStack(MyItems.electrumDust, 4, 0), 
 				MyItems.goldDust, 
 				OreFamilies.silver.getItemDust(), 
 				OreFamilies.silver.getItemDust(), 
