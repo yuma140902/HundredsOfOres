@@ -3,6 +3,7 @@ package yuma140902.hundredsofores.orefamilies;
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import yuma140902.hundredsofores.ModHundredsOfOres;
+import yuma140902.hundredsofores.orefamilies.features.BlockOre;
 import yuma140902.hundredsofores.util.ListUtil;
 
 public final class OreFamilies {
@@ -81,16 +82,16 @@ public final class OreFamilies {
 	private static final String RAINBOW_NAME = "rainbow";
 	private static final String RUBY_NAME = "ruby";
 	
-	public static final OreFamilyWithGemOrIngot tin = new OreFamilyWithIngot(TIN_NAME);
-	public static final OreFamilyWithGemOrIngot copper = new OreFamilyWithIngot(COPPER_NAME);
-	public static final OreFamilyWithGemOrIngot silver = new OreFamilyWithIngot(SILVER_NAME) {{
-		blockOre.setOreGenConfigDefaultSpawnTries(10);
+	public static final OreFamily tin = new OreFamily(TIN_NAME);
+	public static final OreFamily copper = new OreFamily(COPPER_NAME);
+	public static final OreFamily silver = new OreFamily(SILVER_NAME) {{
+		((BlockOre)getFeature(FeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
-	public static final OreFamilyWithGemOrIngot lead = new OreFamilyWithIngot(LEAD_NAME);
+	public static final OreFamily lead = new OreFamily(LEAD_NAME);
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
-		blockOre.setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
+		((BlockOre)getFeature(FeatureType.ORE)).setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
-	public static final OreFamilyWithGemOrIngot ruby = new OreFamilyWithGem(RUBY_NAME) {{
-		blockOre.setOreGenConfigDefaultSpawnTries(10);
+	public static final OreFamily ruby = new OreFamily(RUBY_NAME) {{
+		((BlockOre)getFeature(FeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
 }
