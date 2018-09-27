@@ -223,6 +223,8 @@ public class OreFeaturesSet {
 	}
 	
 	public void loadToolConfig(Configuration cfg) {
+		if(!hasFeature(OreFeatureType.PICKAXE)) return;
+		
 		OreFeatureItemBase gem_ingot;
 		if(hasFeature(OreFeatureType.INGOT)) {
 			gem_ingot = (OreFeatureItemBase) getFeature(OreFeatureType.INGOT);
