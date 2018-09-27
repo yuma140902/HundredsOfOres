@@ -2,10 +2,14 @@ package yuma140902.hundredsofores.orefamilies;
 
 import java.util.EnumMap;
 import java.util.Map;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import yuma140902.hundredsofores.ModHundredsOfOres;
 import yuma140902.hundredsofores.orefamilies.features.BlockCompressedBlock;
 import yuma140902.hundredsofores.orefamilies.features.BlockOre;
@@ -91,12 +95,69 @@ public class OreFamily {
 		// レシピの追加など
 		BlockOre ore = (BlockOre) getFeature(FeatureType.ORE);
 		ItemDust dust = (ItemDust) getFeature(FeatureType.DUST);
+		BlockCompressedBlock block = (BlockCompressedBlock) getFeature(FeatureType.BLOCK);
+		Item gem_ingot = getGemOrIngot();
+		Item gear = itemGear;
+		Item pickaxe = itemPickaxe;
 		
 		String oreOredict = ore.getOreDictionaryKey();
+		String blockOredict = block.getOreDictionaryKey();
+		String gem_ingotOredict = getGemOrIngot().getOreDictionaryKey();
 		
 		// 鉱石から粉2つ TODO: 独自の粉砕機も実装したい
 		RecipeRegisterHelper.addRecipeOreToDust(ore, dust);
 		RecipeRegisterHelper.addRecipeOreToDust(oreOredict, dust);
+		
+		// ブロックの解凍
+		RecipeRegisterHelper.addRecipeBlockExpand(block, gem_ingot);
+		RecipeRegisterHelper.addRecipeBlockExpand(blockOredict, gem_ingot);
+		
+		// ブロックへ圧縮
+		RecipeRegisterHelper.addRecipeBlockCompress(gem_ingot, block);
+		RecipeRegisterHelper.addRecipeBlockCompress(gem_ingotOredict, block);
+		
+		// ジェムOrインゴットからギア
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				gear, 
+				" # ", 
+				"###", 
+				" # ", 
+				'#', gem_ingot
+				));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				gear, 
+				" # ", 
+				"###", 
+				" # ", 
+				'#', gem_ingotOredict
+				));
+		
+		// ジェムOrインゴットからツルハシ
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				pickaxe, 
+				"###", 
+				" | ", 
+				" | ", 
+				'#', gem_ingot, 
+				'|', Items.stick
+				));
+		GameRegistry.addRecipe(new ShapedOreRecipe(
+				pickaxe, 
+				"###", 
+				" | ", 
+				" | ", 
+				'#', gem_ingotOredict, 
+				'|', Items.stick
+				));
+		
+		//ジェムOrインゴットから粉
+		RecipeRegisterHelper.addRecipeIngotToDust(gem_ingot, dust);
+		RecipeRegisterHelper.addRecipeIngotToDust(gem_ingotOredict, dust);
+		
+		// 鉱石を精錬してジェムOrインゴット
+		RecipeRegisterHelper.addSmeltingOreToIngot(ore, gem_ingot);
+		// 粉を精錬してジェムOrインゴット
+		RecipeRegisterHelper.addSmeltingDustToIngot(dust, gem_ingot);
 	}
 	
 	public void register() {
