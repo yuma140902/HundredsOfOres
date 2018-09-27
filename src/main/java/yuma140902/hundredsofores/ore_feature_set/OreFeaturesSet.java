@@ -254,9 +254,11 @@ public class OreFeaturesSet {
 				toolNameLiteral + "_Enchantability", categoryName, toolConfigDefaultEnchantability, 0, 4096,
 				toolNameLiteral + "のエンチャントの付きやすさ");
 		
+		
+		toolMaterial = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability);
+		
 		if(gem_ingot != null) {
-			toolMaterial = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability)
-					.setRepairItem(new ItemStack(gem_ingot));
+			toolMaterial.setRepairItem(new ItemStack(gem_ingot));
 		}
 	}
 	
