@@ -57,6 +57,11 @@ public class OreFeaturesSet {
 		for(OreFeatureType key : OreFeatureType.values()) {
 			features.put(key, IOreFeature.EMPTY);
 		}
+		includeFeature(OreFeatureType.ORE);
+		includeFeature(OreFeatureType.BLOCK);
+		includeFeature(OreFeatureType.PICKAXE);
+		includeFeature(OreFeatureType.DUST);
+		includeFeature(OreFeatureType.GEAR);
 	}
 	
 	// existFeaturesの値に基づいてfeaturesを初期化します。
