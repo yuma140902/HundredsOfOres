@@ -39,8 +39,8 @@ public class OreFeaturesSet {
 	protected Map<OreFeatureType, IOreFeature> features = new EnumMap<>(OreFeatureType.class);
 	protected Map<OreFeatureType, Boolean> existFeatures = new EnumMap<>(OreFeatureType.class);
 	
-	protected OreGenConfig oreGenConfig = new OreGenConfig();
-	protected ToolConfig toolConfig = new ToolConfig();
+	public OreGenConfig oreGenConfig = new OreGenConfig();
+	public ToolConfig toolConfig = new ToolConfig();
 	
 	protected ToolMaterial toolMaterial;
 	
