@@ -18,6 +18,7 @@ public final class OreFeaturesSets {
 		lead.setFeatureValues();
 		rainbow.setFeatureValues();
 		ruby.setFeatureValues();
+		electrum.setFeatureValues();
 	}
 	
 	public static void setToolFeatureValues() {
@@ -27,6 +28,7 @@ public final class OreFeaturesSets {
 		lead.setToolFeatureValues();
 		rainbow.setToolFeatureValues();
 		ruby.setToolFeatureValues();
+		electrum.setToolFeatureValues();
 	}
 
 	public static void register() {
@@ -36,6 +38,7 @@ public final class OreFeaturesSets {
 		lead.register();
 		rainbow.register();
 		ruby.register();
+		electrum.register();
 	}
 	
 	public static void loadConfigs() {
@@ -54,6 +57,7 @@ public final class OreFeaturesSets {
 			lead.loadOreGenConfig(oreGenConfig);
 			rainbow.loadOreGenConfig(oreGenConfig);
 			ruby.loadOreGenConfig(oreGenConfig);
+			electrum.loadOreGenConfig(oreGenConfig);
 		}
 		finally {
 			oreGenConfig.save();
@@ -69,6 +73,7 @@ public final class OreFeaturesSets {
 			lead.loadToolConfig(toolConfig);
 			rainbow.loadToolConfig(toolConfig);
 			ruby.loadToolConfig(toolConfig);
+			electrum.loadToolConfig(toolConfig);
 		}
 		finally {
 			toolConfig.save();
@@ -82,6 +87,7 @@ public final class OreFeaturesSets {
 		lead.registerRecipes();
 		rainbow.registerRecipes();
 		ruby.registerRecipes();
+		electrum.registerRecipes();
 	}
 	
 	public static void registerToWorldGenerators() {
@@ -91,6 +97,7 @@ public final class OreFeaturesSets {
 		lead.registerToWorldGenerators();
 		rainbow.registerToWorldGenerators();
 		ruby.registerToWorldGenerators();
+		electrum.registerToWorldGenerators();
 	}
 	
 	private static final String COPPER_NAME = "copper";
