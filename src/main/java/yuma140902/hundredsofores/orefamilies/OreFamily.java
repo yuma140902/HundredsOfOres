@@ -93,8 +93,7 @@ public class OreFamily {
 		}
 	}
 	
-	public void init() {
-		// レシピの追加など
+	public void registerRecipes() {
 		
 		boolean hasGemOrIngot = hasFeature(FeatureType.INGOT) || hasFeature(FeatureType.GEM);
 		OreFamilyFeatureItemBase gem_ingot = null;

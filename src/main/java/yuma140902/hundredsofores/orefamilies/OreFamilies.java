@@ -65,12 +65,12 @@ public final class OreFamilies {
 	}
 	
 	public static void init() {
-		tin.init();
-		copper.init();
-		silver.init();
-		lead.init();
-		rainbow.init();
-		ruby.init();
+		tin.registerRecipes();
+		copper.registerRecipes();
+		silver.registerRecipes();
+		lead.registerRecipes();
+		rainbow.registerRecipes();
+		ruby.registerRecipes();
 	}
 	
 	public static void registerToWorldGenerators() {
