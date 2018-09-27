@@ -1,5 +1,6 @@
 package yuma140902.hundredsofores.recipes;
 
+import javax.annotation.Nullable;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -23,7 +24,8 @@ public final class RecipeRegisterHelper {
 			ore, HUMMER));
 	}
 	
-	public static void addRecipeOreToDust(String oreOreDictionaryKey, Item dust) {
+	public static void addRecipeOreToDust(@Nullable String oreOreDictionaryKey, Item dust) {
+		if(oreOreDictionaryKey == null) return;
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				new ItemStack(dust, 2), 
 				oreOreDictionaryKey, HUMMER));
@@ -36,7 +38,8 @@ public final class RecipeRegisterHelper {
 				gem_ingot, HUMMER));
 	}
 	
-	public static void addRecipeIngotToDust(String gem_ingotOreDictionaryKey, Item dust) {
+	public static void addRecipeIngotToDust(@Nullable String gem_ingotOreDictionaryKey, Item dust) {
+		if(gem_ingotOreDictionaryKey == null) return;
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				dust,
 				gem_ingotOreDictionaryKey, HUMMER));
@@ -53,7 +56,8 @@ public final class RecipeRegisterHelper {
 				));
 	}
 	
-	public static void addRecipeBlockCompress(String gem_ingotOreDictionaryKey, Block block) {
+	public static void addRecipeBlockCompress(@Nullable String gem_ingotOreDictionaryKey, Block block) {
+		if(gem_ingotOreDictionaryKey == null) return;
 		GameRegistry.addRecipe(new ShapedOreRecipe(
 				block, 
 				"###", 
@@ -71,7 +75,8 @@ public final class RecipeRegisterHelper {
 				));
 	}
 	
-	public static void addRecipeBlockExpand(String blockOreDictionaryKey, Item gem_ingot) {
+	public static void addRecipeBlockExpand(@Nullable String blockOreDictionaryKey, Item gem_ingot) {
+		if(blockOreDictionaryKey == null) return;
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				new ItemStack(gem_ingot, 9), 
 				blockOreDictionaryKey

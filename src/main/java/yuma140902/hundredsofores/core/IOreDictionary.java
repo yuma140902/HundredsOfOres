@@ -1,8 +1,8 @@
 package yuma140902.hundredsofores.core;
 
-import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public interface IOreDictionary {
-	@Nonnull
+	@Nullable
 	String getOreDictionaryKey();
 }
