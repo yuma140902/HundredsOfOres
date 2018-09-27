@@ -216,7 +216,10 @@ public class OreFeaturesSet {
 	}
 	
 	public void loadOreGenConfig(Configuration cfg) {
+		if(!hasFeature(OreFeatureType.ORE)) oreGenConfig.setDefaultIsOrdinaryGenEnabled(false);
 		oreGenConfig.loadFromConfigFile(cfg, "ore" + StringUtil.ToCase_XxxXxx(_oreName));
+		
+		//oreが存在しない場合はenabledを強制的にfalseに書き換え
 		if(!hasFeature(OreFeatureType.ORE)) {
 			oreGenConfig.enabled = false;
 		}
