@@ -10,15 +10,17 @@ public final class OreFeaturesSets {
 	private OreFeaturesSets() {};
 	
 	public static int[] globalDimensionBlackList;
-
-	public static void register() {
+	
+	public static void setFeatureValues() {
 		tin.setValues();
 		copper.setValues();
 		silver.setValues();
 		lead.setValues();
 		rainbow.setValues();
 		ruby.setValues();
-		
+	}
+
+	public static void register() {
 		tin.register();
 		copper.register();
 		silver.register();

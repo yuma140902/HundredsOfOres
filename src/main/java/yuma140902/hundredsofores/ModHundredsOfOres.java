@@ -55,6 +55,7 @@ public class ModHundredsOfOres {
 		MyBlocks.register();
 		MyItems.register();
 		
+		OreFeaturesSets.setFeatureValues();
 		OreFeaturesSets.loadConfigs();
 		OreFeaturesSets.register();
 	}
