@@ -13,6 +13,13 @@ public final class OreFamilies {
 	public static int[] globalDimensionBlackList;
 
 	public static void register() {
+		tin.setValues();
+		copper.setValues();
+		silver.setValues();
+		lead.setValues();
+		rainbow.setValues();
+		ruby.setValues();
+		
 		tin.register();
 		copper.register();
 		silver.register();
