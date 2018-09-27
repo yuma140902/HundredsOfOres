@@ -211,10 +211,11 @@ public class OreFeaturesSet {
 	}
 	
 	public void register() {
-		getFeature(OreFeatureType.ORE).register();
-		getFeature(OreFeatureType.DUST).register();
-		getFeature(OreFeatureType.BLOCK).register();
-		getFeature(OreFeatureType.GEAR).register();
+		for(OreFeatureType key : OreFeatureType.values()) {
+			if(hasFeature(key)) {
+				getFeature(key).register();
+			}
+		}
 	}
 	
 	public void loadOreGenConfig(Configuration cfg) {
