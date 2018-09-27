@@ -98,6 +98,7 @@ public class OreFeaturesSet {
 	}
 	
 	public void setToolFeatureValues() {
+		if(!hasFeature(OreFeatureType.PICKAXE)) return;
 		features.put(OreFeatureType.PICKAXE, new ItemPickaxe(_oreName, toolMaterial));
 	}
 	
