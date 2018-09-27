@@ -103,29 +103,28 @@ public final class OreFeaturesSets {
 	public static final OreFeaturesSet tin = new OreFeaturesSet(TIN_NAME)
 			.includeFeature(OreFeatureType.INGOT)
 			.includeFeature(OreFeatureType.NUGGET);
+	
 	public static final OreFeaturesSet copper = new OreFeaturesSet(COPPER_NAME)
 			.includeFeature(OreFeatureType.INGOT)
 			.includeFeature(OreFeatureType.NUGGET);
-	//TODO: OreGenConfigのデフォルト値を書き換える方法を確保
-	//ToolMaterialのConfigもあるので、ConfigManager的なものを作ってもいいかもしれない
-	//しかし、ForgeConfigの再発明になってしまうかもしれない
+	
 	public static final OreFeaturesSet silver = new OreFeaturesSet(SILVER_NAME)
-			.includeFeature(OreFeatureType.INGOT)
-			.includeFeature(OreFeatureType.NUGGET);
-//	{{
-//		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
-//	}};
+		{{
+			includeFeature(OreFeatureType.INGOT);
+			includeFeature(OreFeatureType.NUGGET);
+			oreGenConfig.setDefaultSpawnTries(10);
+		}};
+		
 	public static final OreFeaturesSet lead = new OreFeaturesSet(LEAD_NAME)
 			.includeFeature(OreFeatureType.INGOT)
 			.includeFeature(OreFeatureType.NUGGET);
+	
 	public static final OreFeaturesSet rainbow = new OreFeaturesSet(RAINBOW_NAME)
-			.includeFeature(OreFeatureType.GEM);
-//	{{
-//		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
-//	}};
+			.includeFeature(OreFeatureType.GEM)
+			.excludeFeature(OreFeatureType.ORE);
+	
 	public static final OreFeaturesSet ruby = new OreFeaturesSet(RUBY_NAME)
-			.includeFeature(OreFeatureType.GEM);
-//	{{
-//		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
-//	}};
+		{{
+			includeFeature(OreFeatureType.GEM);
+		}};
 }
