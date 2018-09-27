@@ -42,9 +42,10 @@ public final class Recipes {
 	
 	private static void registerAlloyRecipes() {
 		Item silverDust = (Item) OreFeaturesSets.silver.getFeature(OreFeatureType.DUST);
+		Item electrumDust = (Item) OreFeaturesSets.electrum.getFeature(OreFeatureType.DUST);
 		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
-				new ItemStack(MyItems.electrumDust, 4, 0), 
+				new ItemStack((Item) electrumDust, 4, 0), 
 				MyItems.goldDust, 
 				silverDust,
 				silverDust,

@@ -127,4 +127,9 @@ public final class OreFeaturesSets {
 		{{
 			includeFeature(OreFeatureType.GEM);
 		}};
+
+	public static final OreFeaturesSet electrum = new OreFeaturesSet("electrum")
+			.includeFeature(OreFeatureType.INGOT)
+			.includeFeature(OreFeatureType.NUGGET)
+			.excludeFeature(OreFeatureType.ORE);
 }
