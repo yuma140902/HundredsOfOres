@@ -2,7 +2,11 @@ package yuma140902.hundredsofores.orefamilies;
 
 import java.util.EnumMap;
 import java.util.Map;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.util.EnumHelper;
+import yuma140902.hundredsofores.ModHundredsOfOres;
 import yuma140902.hundredsofores.orefamilies.features.BlockCompressedBlock;
 import yuma140902.hundredsofores.orefamilies.features.BlockOre;
 import yuma140902.hundredsofores.orefamilies.features.ItemDust;
@@ -10,7 +14,9 @@ import yuma140902.hundredsofores.orefamilies.features.ItemGear;
 import yuma140902.hundredsofores.orefamilies.features.ItemGem;
 import yuma140902.hundredsofores.orefamilies.features.ItemIngot;
 import yuma140902.hundredsofores.orefamilies.features.ItemNugget;
+import yuma140902.hundredsofores.orefamilies.features.ItemPickaxe;
 import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
+import yuma140902.hundredsofores.util.StringUtil;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 
 /**
@@ -27,6 +33,14 @@ public class OreFamily {
 	protected Map<FeatureType, IOreFamilyFeature> features = new EnumMap<>(FeatureType.class);
 	protected Map<FeatureType, Boolean> existFeatures = new EnumMap<>(FeatureType.class);
 	
+	protected int toolConfigDefaultHarvestLevel = 2;
+	protected int toolConfigDefaultMaxUses = 300;
+	protected float toolConfigDefaultEfficiency = 7.0F;
+	protected float toolConfigDefaultDamage = 0.0F;
+	protected int toolConfigDefaultEnchantability = 14;
+	
+	protected ToolMaterial toolMaterial;
+	
 	public OreFamily(String oreName) {
 		this(new OreID(oreName));
 	}
@@ -39,7 +53,7 @@ public class OreFamily {
 		}
 	}
 	
-	// existFeaturesの値に基づいてfeaturesを初期化します。(ただしpickaxeは除く)
+	// existFeaturesの値に基づいてfeaturesを初期化します。
 	public void setValues() {
 		for(Map.Entry<FeatureType, Boolean> entry : existFeatures.entrySet()) {
 			if(entry.getValue() == true) {
@@ -66,7 +80,7 @@ public class OreFamily {
 						features.put(FeatureType.GEAR, new ItemGear(_oreName));
 						break;
 					case PICKAXE:
-//						features.put(FeatureType.PICKAXE, new ItemPickaxe());
+						features.put(FeatureType.PICKAXE, new ItemPickaxe(_oreName, toolMaterial));
 						break;
 				}
 			}
@@ -94,6 +108,40 @@ public class OreFamily {
 	
 	public void loadOreGenConfig(Configuration cfg) {
 		((BlockOre) getFeature(FeatureType.ORE)).loadConfig(cfg);
+	}
+	
+	public void loadToolConfig(Configuration cfg) {
+		OreFamilyFeatureItemBase gem_ingot;
+		if(hasFeature(FeatureType.INGOT)) {
+			gem_ingot = (OreFamilyFeatureItemBase) getFeature(FeatureType.INGOT);
+		}
+		else if(hasFeature(FeatureType.GEM)) {
+			gem_ingot = (OreFamilyFeatureItemBase) getFeature(FeatureType.GEM);
+		}
+		else {
+			return;
+		}
+		
+		String toolNameLiteral = "pickaxe" + StringUtil.ToCase_XxxXxx(getOreId());
+		String categoryName = toolNameLiteral;
+		
+		String name = ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(getOreId()) + ".pickaxe";
+		
+		int harvestLevel = cfg.getInt(
+				toolNameLiteral + "_HarvestLevel", categoryName, toolConfigDefaultHarvestLevel, 0, 10,
+				toolNameLiteral + "のハーベストレベル");
+		int maxUses = cfg.getInt(
+				toolNameLiteral + "_MaxUses", categoryName, toolConfigDefaultMaxUses, 0, 4096, toolNameLiteral + "の使用可能回数(?)");
+		float efficiency = cfg.getFloat(
+				toolNameLiteral + "_Efficiency", categoryName, toolConfigDefaultEfficiency, 0, 4096, toolNameLiteral + "の採掘効率");
+		float damage = cfg.getFloat(
+				toolNameLiteral + "_Damage", categoryName, toolConfigDefaultDamage, 0, 4096, toolNameLiteral + "のダメージ量");
+		int enchantability = cfg.getInt(
+				toolNameLiteral + "_Enchantability", categoryName, toolConfigDefaultEnchantability, 0, 4096,
+				toolNameLiteral + "のエンチャントの付きやすさ");
+		
+		toolMaterial = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability)
+				.setRepairItem(new ItemStack(gem_ingot));
 	}
 	
 	public void registerToWorldGenerators() {
