@@ -65,7 +65,7 @@ public class OreFeaturesSet {
 	}
 	
 	// existFeaturesの値に基づいてfeaturesを初期化します。
-	public void setValues() {
+	public void setFeatureValues() {
 		for(Map.Entry<OreFeatureType, Boolean> entry : existFeatures.entrySet()) {
 			if(entry.getValue() == true) {
 				switch (entry.getKey()) {

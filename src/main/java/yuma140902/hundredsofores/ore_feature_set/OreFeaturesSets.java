@@ -12,12 +12,12 @@ public final class OreFeaturesSets {
 	public static int[] globalDimensionBlackList;
 	
 	public static void setFeatureValues() {
-		tin.setValues();
-		copper.setValues();
-		silver.setValues();
-		lead.setValues();
-		rainbow.setValues();
-		ruby.setValues();
+		tin.setFeatureValues();
+		copper.setFeatureValues();
+		silver.setFeatureValues();
+		lead.setFeatureValues();
+		rainbow.setFeatureValues();
+		ruby.setFeatureValues();
 	}
 
 	public static void register() {
