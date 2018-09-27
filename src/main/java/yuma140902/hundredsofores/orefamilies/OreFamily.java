@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.ModHundredsOfOres;
 import yuma140902.hundredsofores.orefamilies.features.BlockCompressedBlock;
 import yuma140902.hundredsofores.orefamilies.features.BlockOre;
@@ -149,6 +150,17 @@ public class OreFamily {
 				'#', gem_ingotOredict, 
 				'|', Items.stick
 				));
+		
+		String ingotOredict = itemIngot.getOreDictionaryKey();
+		String nuggetOredict = itemNugget.getOreDictionaryKey();
+		
+		// ナゲットからインゴット
+		GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nugget));
+		GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nuggetOredict));
+		
+		// インゴットからナゲット
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingot));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingotOredict));
 		
 		//ジェムOrインゴットから粉
 		RecipeRegisterHelper.addRecipeIngotToDust(gem_ingot, dust);
