@@ -22,7 +22,6 @@ import yuma140902.hundredsofores.ore_feature_set.features.ItemIngot;
 import yuma140902.hundredsofores.ore_feature_set.features.ItemNugget;
 import yuma140902.hundredsofores.ore_feature_set.features.ItemPickaxe;
 import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
-import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.StringUtil;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 
@@ -41,12 +40,7 @@ public class OreFeaturesSet {
 	protected Map<OreFeatureType, Boolean> existFeatures = new EnumMap<>(OreFeatureType.class);
 	
 	protected OreGenConfig oreGenConfig = new OreGenConfig();
-	
-	protected int toolConfigDefaultHarvestLevel = 2;
-	protected int toolConfigDefaultMaxUses = 300;
-	protected float toolConfigDefaultEfficiency = 7.0F;
-	protected float toolConfigDefaultDamage = 0.0F;
-	protected int toolConfigDefaultEnchantability = 14;
+	protected ToolConfig toolConfig = new ToolConfig();
 	
 	protected ToolMaterial toolMaterial;
 	
@@ -244,23 +238,12 @@ public class OreFeaturesSet {
 		String toolNameLiteral = "pickaxe" + StringUtil.ToCase_XxxXxx(getOreId());
 		String categoryName = toolNameLiteral;
 		
+		toolConfig.loadFromConfigFile(cfg, toolNameLiteral);
+		
 		String name = ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(getOreId()) + ".pickaxe";
 		
-		int harvestLevel = cfg.getInt(
-				toolNameLiteral + "_HarvestLevel", categoryName, toolConfigDefaultHarvestLevel, 0, 10,
-				toolNameLiteral + "のハーベストレベル");
-		int maxUses = cfg.getInt(
-				toolNameLiteral + "_MaxUses", categoryName, toolConfigDefaultMaxUses, 0, 4096, toolNameLiteral + "の使用可能回数(?)");
-		float efficiency = cfg.getFloat(
-				toolNameLiteral + "_Efficiency", categoryName, toolConfigDefaultEfficiency, 0, 4096, toolNameLiteral + "の採掘効率");
-		float damage = cfg.getFloat(
-				toolNameLiteral + "_Damage", categoryName, toolConfigDefaultDamage, 0, 4096, toolNameLiteral + "のダメージ量");
-		int enchantability = cfg.getInt(
-				toolNameLiteral + "_Enchantability", categoryName, toolConfigDefaultEnchantability, 0, 4096,
-				toolNameLiteral + "のエンチャントの付きやすさ");
-		
-		
-		toolMaterial = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability);
+		toolMaterial = EnumHelper.addToolMaterial
+				(name, toolConfig.harvestLevel, toolConfig.maxUses, toolConfig.efficiency, toolConfig.damage, toolConfig.enchantability);
 		
 		if(gem_ingot != null) {
 			toolMaterial = toolMaterial.setRepairItem(new ItemStack(gem_ingot));
@@ -271,26 +254,6 @@ public class OreFeaturesSet {
 		if(!hasFeature(OreFeatureType.ORE)) return;
 		BlockOre ore = (BlockOre) getFeature(OreFeatureType.ORE);
 		WorldGenerators.oreGenerator.addOreGenerator(ore, oreGenConfig);
-	}
-	
-	public void setToolConfigDefaultHarvestLevel(int value) {
-		this.toolConfigDefaultHarvestLevel = value;
-	}
-
-	public void setToolConfigDefaultMaxUses(int value) {
-		this.toolConfigDefaultMaxUses = value;
-	}
-
-	public void setToolConfigDefaultEfficiency(float value) {
-		this.toolConfigDefaultEfficiency = value;
-	}
-
-	public void setToolConfigDefaultDamage(float value) {
-		this.toolConfigDefaultDamage = value;
-	}
-
-	public void setToolConfigDefaultEnchantability(int value) {
-		this.toolConfigDefaultEnchantability = value;
 	}
 	
 	public OreID getOreId() {
