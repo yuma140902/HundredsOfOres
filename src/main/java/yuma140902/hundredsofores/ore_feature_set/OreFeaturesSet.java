@@ -209,6 +209,7 @@ public class OreFeaturesSet {
 	}
 	
 	public void loadOreGenConfig(Configuration cfg) {
+		if(!hasFeature(OreFeatureType.ORE)) return;
 		((BlockOre) getFeature(OreFeatureType.ORE)).loadConfig(cfg);
 	}
 	
