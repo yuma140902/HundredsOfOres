@@ -22,6 +22,7 @@ import yuma140902.hundredsofores.ore_feature_set.features.ItemIngot;
 import yuma140902.hundredsofores.ore_feature_set.features.ItemNugget;
 import yuma140902.hundredsofores.ore_feature_set.features.ItemPickaxe;
 import yuma140902.hundredsofores.recipes.RecipeRegisterHelper;
+import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.StringUtil;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 
@@ -38,6 +39,8 @@ public class OreFeaturesSet {
 	
 	protected Map<OreFeatureType, IOreFeature> features = new EnumMap<>(OreFeatureType.class);
 	protected Map<OreFeatureType, Boolean> existFeatures = new EnumMap<>(OreFeatureType.class);
+	
+	protected OreGenConfig oreGenConfig = new OreGenConfig();
 	
 	protected int toolConfigDefaultHarvestLevel = 2;
 	protected int toolConfigDefaultMaxUses = 300;
@@ -220,7 +223,34 @@ public class OreFeaturesSet {
 	
 	public void loadOreGenConfig(Configuration cfg) {
 		if(!hasFeature(OreFeatureType.ORE)) return;
-		((BlockOre) getFeature(OreFeatureType.ORE)).loadConfig(cfg);
+		
+		String oreNameLiteral = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
+		oreGenConfig.enabled = cfg.getBoolean(
+				oreNameLiteral + "_isDefaultGenEnabled", "gen_" + oreNameLiteral, oreGenConfig.defaultIsOrdinaryGenEnabled,
+				oreNameLiteral + "の標準の生成が有効になっているかどうか");
+		oreGenConfig.spawnTries = cfg.getInt(
+				oreNameLiteral + "_SpawnTries", "gen_" + oreNameLiteral, oreGenConfig.defaultSpawnTries, 0, 1024,
+				oreNameLiteral + "の生成確率");
+		oreGenConfig.spawnSize = cfg.getInt(
+				oreNameLiteral + "_SpawnSize", "gen_" + oreNameLiteral, oreGenConfig.defaultSpawnSize, 0, 1024,
+				oreNameLiteral + "が一度に生成される数");
+		oreGenConfig.maxHeight = cfg.getInt(
+				oreNameLiteral + "_MaxHeight", "gen_" + oreNameLiteral, oreGenConfig.defaultMaxHeight, 0, 256,
+				oreNameLiteral + "が生成される最高の高さ");
+		oreGenConfig.minHeight = cfg.getInt(
+				oreNameLiteral + "_MinHeight", "gen_" + oreNameLiteral, oreGenConfig.defaultMinHeight, 0, 256,
+				oreNameLiteral + "が生成される最低の高さ");
+		
+		String[] dimensionBlackListStr = cfg.getStringList(
+				oreNameLiteral + "_dimensionBlackList", "gen_" + oreNameLiteral, oreGenConfig.defaultDimensionBlackListStr,
+				oreNameLiteral + "を生成しないディメンションID");
+		
+		if (oreGenConfig.enabled) {
+			oreGenConfig.dimensionBlackList = ListUtil.ToIntList(dimensionBlackListStr);
+		}
+		else {
+			oreGenConfig = null;
+		}
 	}
 	
 	public void loadToolConfig(Configuration cfg) {
