@@ -111,7 +111,7 @@ public class OreFamily {
 		}
 		
 		if(hasGemOrIngot && hasFeature(OreFeatureType.BLOCK)) {
-			OreFamilyFeatureBlockBase block = (OreFamilyFeatureBlockBase) getFeature(OreFeatureType.BLOCK);
+			OreFeatureBlockBase block = (OreFeatureBlockBase) getFeature(OreFeatureType.BLOCK);
 			String blockOredict = block.getOreDictionaryKey();
 			
 			// ブロックの解凍

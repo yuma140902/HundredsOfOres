@@ -4,11 +4,11 @@ import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.ore_feature_set.OreFamilyFeatureBlockBase;
+import yuma140902.hundredsofores.ore_feature_set.OreFeatureBlockBase;
 import yuma140902.hundredsofores.ore_feature_set.OreID;
 import yuma140902.hundredsofores.util.StringUtil;
 
-public class BlockCompressedBlock extends OreFamilyFeatureBlockBase {
+public class BlockCompressedBlock extends OreFeatureBlockBase {
 
 	public BlockCompressedBlock(String oreName) {
 		this(new OreID(oreName));
