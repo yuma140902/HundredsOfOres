@@ -3,7 +3,6 @@ package yuma140902.hundredsofores.ore_feature_set;
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.ore_feature_set.features.BlockOre;
 import yuma140902.hundredsofores.util.ListUtil;
 
 public final class OreFeaturesSets {
@@ -91,14 +90,17 @@ public final class OreFeaturesSets {
 	
 	public static final OreFeaturesSet tin = new OreFeaturesSet(TIN_NAME);
 	public static final OreFeaturesSet copper = new OreFeaturesSet(COPPER_NAME);
+	//TODO: OreGenConfigのデフォルト値を書き換える方法を確保
+	//ToolMaterialのConfigもあるので、ConfigManager的なものを作ってもいいかもしれない
+	//しかし、ForgeConfigの再発明になってしまうかもしれない
 	public static final OreFeaturesSet silver = new OreFeaturesSet(SILVER_NAME) {{
-		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
+//		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
 	public static final OreFeaturesSet lead = new OreFeaturesSet(LEAD_NAME);
 	public static final OreFeaturesSet rainbow = new OreFeaturesSet(RAINBOW_NAME) {{
-		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
+//		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
 	public static final OreFeaturesSet ruby = new OreFeaturesSet(RUBY_NAME) {{
-		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
+//		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
 }
