@@ -247,6 +247,7 @@ public class OreFamily {
 	}
 	
 	public void registerToWorldGenerators() {
+		if(!hasFeature(FeatureType.ORE)) return;
 		BlockOre ore = (BlockOre) getFeature(FeatureType.ORE);
 		WorldGenerators.oreGenerator.addOreGenerator(ore, ore.getOreGeneratorConfig());
 	}
