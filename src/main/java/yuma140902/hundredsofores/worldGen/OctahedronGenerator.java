@@ -1,11 +1,13 @@
 package yuma140902.hundredsofores.worldGen;
 
 import java.util.Random;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.world.World;
+import yuma140902.hundredsofores.orefamilies.FeatureType;
 import yuma140902.hundredsofores.orefamilies.OreFamilies;
 
 public class OctahedronGenerator extends WorldGeneratorBase {
@@ -93,10 +95,10 @@ public class OctahedronGenerator extends WorldGeneratorBase {
 					setBlockAt(world, random, Blocks.coal_block,															centerX, centerY + i, centerZ - (r-i), 0);
 					setBlockAt(world, random, Blocks.coal_block,															centerX, centerY - i, centerZ + (r-i), 0);
 					setBlockAt(world, random, Blocks.obsidian,																centerX, centerY - i, centerZ - (r-i), 0);
-					setBlockAt(world, random, OreFamilies.copper.getBlockCompressedIngot(),		centerX + i, centerY + (r-i), centerZ, 0);
-					setBlockAt(world, random, OreFamilies.silver.getBlockCompressedIngot(),		centerX + i, centerY - (r-i), centerZ, 0);
+					setBlockAt(world, random, (Block) OreFamilies.copper.getFeature(FeatureType.BLOCK),		centerX + i, centerY + (r-i), centerZ, 0);
+					setBlockAt(world, random, (Block) OreFamilies.silver.getFeature(FeatureType.BLOCK),		centerX + i, centerY - (r-i), centerZ, 0);
 					setBlockAt(world, random, Blocks.quartz_block,														centerX - i, centerY + (r-i), centerZ, 0);
-					setBlockAt(world, random, OreFamilies.tin.getBlockCompressedIngot(), centerX - i, centerY - (r-i), centerZ, 0);
+					setBlockAt(world, random, (Block) OreFamilies.tin.getFeature(FeatureType.BLOCK), centerX - i, centerY - (r-i), centerZ, 0);
 			}
 			
 			//中心から各頂点までの線を生成
