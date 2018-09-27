@@ -9,8 +9,8 @@ import yuma140902.hundredsofores.ore_feature_set.features.ItemGem;
 import yuma140902.hundredsofores.ore_feature_set.features.ItemIngot;
 import yuma140902.hundredsofores.ore_feature_set.features.ItemNugget;
 
-public final class FeatureTypeHelper {
-	private FeatureTypeHelper() {}
+public final class OreFeatureTypeHelper {
+	private OreFeatureTypeHelper() {}
 	
 	public static Class<?> getClass(OreFeatureType featureType) {
 		switch (featureType) {
