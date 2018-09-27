@@ -96,10 +96,10 @@ public class OreFamily {
 	public void registerRecipes() {
 		
 		boolean hasGemOrIngot = hasFeature(OreFeatureType.INGOT) || hasFeature(OreFeatureType.GEM);
-		OreFamilyFeatureItemBase gem_ingot = null;
+		OreFeatureItemBase gem_ingot = null;
 		String gem_ingotOredict = null;
 		if(hasGemOrIngot) {
-			gem_ingot = (OreFamilyFeatureItemBase) (hasFeature(OreFeatureType.INGOT) ? getFeature(OreFeatureType.INGOT) : getFeature(OreFeatureType.GEM));
+			gem_ingot = (OreFeatureItemBase) (hasFeature(OreFeatureType.INGOT) ? getFeature(OreFeatureType.INGOT) : getFeature(OreFeatureType.GEM));
 			gem_ingotOredict = gem_ingot.getOreDictionaryKey();
 		}
 		//前処理ここまで
@@ -175,8 +175,8 @@ public class OreFamily {
 		}
 		
 		if(hasFeature(OreFeatureType.INGOT) && hasFeature(OreFeatureType.NUGGET)) {
-			OreFamilyFeatureItemBase nugget = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.NUGGET);
-			OreFamilyFeatureItemBase ingot = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.INGOT);
+			OreFeatureItemBase nugget = (OreFeatureItemBase) getFeature(OreFeatureType.NUGGET);
+			OreFeatureItemBase ingot = (OreFeatureItemBase) getFeature(OreFeatureType.INGOT);
 			String nuggetOredict = nugget.getOreDictionaryKey();
 			String ingotOredict = ingot.getOreDictionaryKey();
 			
@@ -213,12 +213,12 @@ public class OreFamily {
 	}
 	
 	public void loadToolConfig(Configuration cfg) {
-		OreFamilyFeatureItemBase gem_ingot;
+		OreFeatureItemBase gem_ingot;
 		if(hasFeature(OreFeatureType.INGOT)) {
-			gem_ingot = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.INGOT);
+			gem_ingot = (OreFeatureItemBase) getFeature(OreFeatureType.INGOT);
 		}
 		else if(hasFeature(OreFeatureType.GEM)) {
-			gem_ingot = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.GEM);
+			gem_ingot = (OreFeatureItemBase) getFeature(OreFeatureType.GEM);
 		}
 		else {
 			return;
