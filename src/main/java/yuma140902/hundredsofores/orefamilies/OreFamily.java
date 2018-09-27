@@ -210,6 +210,26 @@ public class OreFamily {
 		WorldGenerators.oreGenerator.addOreGenerator(ore, ore.getOreGeneratorConfig());
 	}
 	
+	public void setToolConfigDefaultHarvestLevel(int value) {
+		this.toolConfigDefaultHarvestLevel = value;
+	}
+
+	public void setToolConfigDefaultMaxUses(int value) {
+		this.toolConfigDefaultMaxUses = value;
+	}
+
+	public void setToolConfigDefaultEfficiency(float value) {
+		this.toolConfigDefaultEfficiency = value;
+	}
+
+	public void setToolConfigDefaultDamage(float value) {
+		this.toolConfigDefaultDamage = value;
+	}
+
+	public void setToolConfigDefaultEnchantability(int value) {
+		this.toolConfigDefaultEnchantability = value;
+	}
+	
 	public OreID getOreId() {
 		return this._oreName;
 	}
