@@ -258,7 +258,7 @@ public class OreFeaturesSet {
 		toolMaterial = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability);
 		
 		if(gem_ingot != null) {
-			toolMaterial.setRepairItem(new ItemStack(gem_ingot));
+			toolMaterial = toolMaterial.setRepairItem(new ItemStack(gem_ingot));
 		}
 	}
 	
