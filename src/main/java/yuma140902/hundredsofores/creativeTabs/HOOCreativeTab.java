@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import yuma140902.hundredsofores.ore_feature_set.FeatureType;
+import yuma140902.hundredsofores.ore_feature_set.OreFeatureType;
 import yuma140902.hundredsofores.ore_feature_set.OreFamilies;
 
 public class HOOCreativeTab extends CreativeTabs {
@@ -17,7 +17,7 @@ public class HOOCreativeTab extends CreativeTabs {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public ItemStack getIconItemStack() {
-		return new ItemStack((Block) OreFamilies.copper.getFeature(FeatureType.ORE));
+		return new ItemStack((Block) OreFamilies.copper.getFeature(OreFeatureType.ORE));
 	}
 	
 	@Override

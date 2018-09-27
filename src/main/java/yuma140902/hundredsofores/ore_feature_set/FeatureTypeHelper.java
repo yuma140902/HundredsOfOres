@@ -12,7 +12,7 @@ import yuma140902.hundredsofores.ore_feature_set.features.ItemNugget;
 public final class FeatureTypeHelper {
 	private FeatureTypeHelper() {}
 	
-	public static Class<?> getClass(FeatureType featureType) {
+	public static Class<?> getClass(OreFeatureType featureType) {
 		switch (featureType) {
 			case ORE:
 				return BlockOre.class;

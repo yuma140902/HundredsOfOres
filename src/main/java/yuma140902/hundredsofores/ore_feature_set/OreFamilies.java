@@ -92,13 +92,13 @@ public final class OreFamilies {
 	public static final OreFamily tin = new OreFamily(TIN_NAME);
 	public static final OreFamily copper = new OreFamily(COPPER_NAME);
 	public static final OreFamily silver = new OreFamily(SILVER_NAME) {{
-		((BlockOre)getFeature(FeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
+		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
 	public static final OreFamily lead = new OreFamily(LEAD_NAME);
 	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
-		((BlockOre)getFeature(FeatureType.ORE)).setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
+		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
 	public static final OreFamily ruby = new OreFamily(RUBY_NAME) {{
-		((BlockOre)getFeature(FeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
+		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
 }

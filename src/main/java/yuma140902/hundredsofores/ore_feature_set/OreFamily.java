@@ -36,8 +36,8 @@ public class OreFamily {
 	
 	private OreID _oreName;
 	
-	protected Map<FeatureType, IOreFamilyFeature> features = new EnumMap<>(FeatureType.class);
-	protected Map<FeatureType, Boolean> existFeatures = new EnumMap<>(FeatureType.class);
+	protected Map<OreFeatureType, IOreFamilyFeature> features = new EnumMap<>(OreFeatureType.class);
+	protected Map<OreFeatureType, Boolean> existFeatures = new EnumMap<>(OreFeatureType.class);
 	
 	protected int toolConfigDefaultHarvestLevel = 2;
 	protected int toolConfigDefaultMaxUses = 300;
@@ -54,39 +54,39 @@ public class OreFamily {
 	public OreFamily(OreID oreName) {
 		this._oreName = oreName;
 		
-		for(FeatureType key : FeatureType.values()) {
+		for(OreFeatureType key : OreFeatureType.values()) {
 			features.put(key, IOreFamilyFeature.EMPTY);
 		}
 	}
 	
 	// existFeaturesの値に基づいてfeaturesを初期化します。
 	public void setValues() {
-		for(Map.Entry<FeatureType, Boolean> entry : existFeatures.entrySet()) {
+		for(Map.Entry<OreFeatureType, Boolean> entry : existFeatures.entrySet()) {
 			if(entry.getValue() == true) {
 				switch (entry.getKey()) {
 					case ORE:
-						features.put(FeatureType.ORE, new BlockOre(_oreName));
+						features.put(OreFeatureType.ORE, new BlockOre(_oreName));
 						break;
 					case BLOCK:
-						features.put(FeatureType.BLOCK, new BlockCompressedBlock(_oreName));
+						features.put(OreFeatureType.BLOCK, new BlockCompressedBlock(_oreName));
 						break;
 					case INGOT:
-						features.put(FeatureType.INGOT, new ItemIngot(_oreName));
+						features.put(OreFeatureType.INGOT, new ItemIngot(_oreName));
 						break;
 					case NUGGET:
-						features.put(FeatureType.NUGGET, new ItemNugget(_oreName));
+						features.put(OreFeatureType.NUGGET, new ItemNugget(_oreName));
 						break;
 					case GEM:
-						features.put(FeatureType.GEM, new ItemGem(_oreName));
+						features.put(OreFeatureType.GEM, new ItemGem(_oreName));
 						break;
 					case DUST:
-						features.put(FeatureType.DUST, new ItemDust(_oreName));
+						features.put(OreFeatureType.DUST, new ItemDust(_oreName));
 						break;
 					case GEAR:
-						features.put(FeatureType.GEAR, new ItemGear(_oreName));
+						features.put(OreFeatureType.GEAR, new ItemGear(_oreName));
 						break;
 					case PICKAXE:
-						features.put(FeatureType.PICKAXE, new ItemPickaxe(_oreName, toolMaterial));
+						features.put(OreFeatureType.PICKAXE, new ItemPickaxe(_oreName, toolMaterial));
 						break;
 				}
 			}
@@ -95,23 +95,23 @@ public class OreFamily {
 	
 	public void registerRecipes() {
 		
-		boolean hasGemOrIngot = hasFeature(FeatureType.INGOT) || hasFeature(FeatureType.GEM);
+		boolean hasGemOrIngot = hasFeature(OreFeatureType.INGOT) || hasFeature(OreFeatureType.GEM);
 		OreFamilyFeatureItemBase gem_ingot = null;
 		String gem_ingotOredict = null;
 		if(hasGemOrIngot) {
-			gem_ingot = (OreFamilyFeatureItemBase) (hasFeature(FeatureType.INGOT) ? getFeature(FeatureType.INGOT) : getFeature(FeatureType.GEM));
+			gem_ingot = (OreFamilyFeatureItemBase) (hasFeature(OreFeatureType.INGOT) ? getFeature(OreFeatureType.INGOT) : getFeature(OreFeatureType.GEM));
 			gem_ingotOredict = gem_ingot.getOreDictionaryKey();
 		}
 		//前処理ここまで
 		
-		if(hasFeature(FeatureType.ORE) && hasFeature(FeatureType.DUST)) {
+		if(hasFeature(OreFeatureType.ORE) && hasFeature(OreFeatureType.DUST)) {
 			// 鉱石から粉2つ TODO: 独自の粉砕機も実装したい
-			RecipeRegisterHelper.addRecipeOreToDust((Block)getFeature(FeatureType.ORE), (Item)getFeature(FeatureType.DUST));
-			RecipeRegisterHelper.addRecipeOreToDust(getFeature(FeatureType.ORE).getOreDictionaryKey(), (Item)getFeature(FeatureType.DUST));
+			RecipeRegisterHelper.addRecipeOreToDust((Block)getFeature(OreFeatureType.ORE), (Item)getFeature(OreFeatureType.DUST));
+			RecipeRegisterHelper.addRecipeOreToDust(getFeature(OreFeatureType.ORE).getOreDictionaryKey(), (Item)getFeature(OreFeatureType.DUST));
 		}
 		
-		if(hasGemOrIngot && hasFeature(FeatureType.BLOCK)) {
-			OreFamilyFeatureBlockBase block = (OreFamilyFeatureBlockBase) getFeature(FeatureType.BLOCK);
+		if(hasGemOrIngot && hasFeature(OreFeatureType.BLOCK)) {
+			OreFamilyFeatureBlockBase block = (OreFamilyFeatureBlockBase) getFeature(OreFeatureType.BLOCK);
 			String blockOredict = block.getOreDictionaryKey();
 			
 			// ブロックの解凍
@@ -123,8 +123,8 @@ public class OreFamily {
 			RecipeRegisterHelper.addRecipeBlockCompress(gem_ingotOredict, block);
 		}
 		
-		if(hasGemOrIngot && hasFeature(FeatureType.GEAR)) {
-			Item gear = (Item) getFeature(FeatureType.GEAR);
+		if(hasGemOrIngot && hasFeature(OreFeatureType.GEAR)) {
+			Item gear = (Item) getFeature(OreFeatureType.GEAR);
 			
 		// ジェムOrインゴットからギア
 			GameRegistry.addRecipe(new ShapedOreRecipe(
@@ -143,8 +143,8 @@ public class OreFamily {
 					));
 		}
 		
-		if(hasGemOrIngot && hasFeature(FeatureType.PICKAXE)) {
-			Item pickaxe = (Item) getFeature(FeatureType.PICKAXE);
+		if(hasGemOrIngot && hasFeature(OreFeatureType.PICKAXE)) {
+			Item pickaxe = (Item) getFeature(OreFeatureType.PICKAXE);
 			
 			// ジェムOrインゴットからツルハシ
 			GameRegistry.addRecipe(new ShapedOreRecipe(
@@ -165,8 +165,8 @@ public class OreFamily {
 					));
 		}
 		
-		if(hasGemOrIngot && hasFeature(FeatureType.DUST)) {
-			Item dust = (Item) getFeature(FeatureType.DUST);
+		if(hasGemOrIngot && hasFeature(OreFeatureType.DUST)) {
+			Item dust = (Item) getFeature(OreFeatureType.DUST);
 			
 			
 			// ジェムOrインゴットから粉
@@ -174,9 +174,9 @@ public class OreFamily {
 			RecipeRegisterHelper.addRecipeIngotToDust(gem_ingotOredict, dust);
 		}
 		
-		if(hasFeature(FeatureType.INGOT) && hasFeature(FeatureType.NUGGET)) {
-			OreFamilyFeatureItemBase nugget = (OreFamilyFeatureItemBase) getFeature(FeatureType.NUGGET);
-			OreFamilyFeatureItemBase ingot = (OreFamilyFeatureItemBase) getFeature(FeatureType.INGOT);
+		if(hasFeature(OreFeatureType.INGOT) && hasFeature(OreFeatureType.NUGGET)) {
+			OreFamilyFeatureItemBase nugget = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.NUGGET);
+			OreFamilyFeatureItemBase ingot = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.INGOT);
 			String nuggetOredict = nugget.getOreDictionaryKey();
 			String ingotOredict = ingot.getOreDictionaryKey();
 			
@@ -189,36 +189,36 @@ public class OreFamily {
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingotOredict));
 		}
 		
-		if(hasGemOrIngot && hasFeature(FeatureType.ORE)) {
+		if(hasGemOrIngot && hasFeature(OreFeatureType.ORE)) {
 			// 鉱石を精錬してジェムOrインゴット
-			RecipeRegisterHelper.addSmeltingOreToIngot((Block)getFeature(FeatureType.ORE) , gem_ingot);
+			RecipeRegisterHelper.addSmeltingOreToIngot((Block)getFeature(OreFeatureType.ORE) , gem_ingot);
 		}
 		
-		if(hasGemOrIngot && hasFeature(FeatureType.DUST)) {
+		if(hasGemOrIngot && hasFeature(OreFeatureType.DUST)) {
 			// 粉を精錬してジェムOrインゴット
-			RecipeRegisterHelper.addSmeltingDustToIngot((Item)getFeature(FeatureType.DUST), gem_ingot);
+			RecipeRegisterHelper.addSmeltingDustToIngot((Item)getFeature(OreFeatureType.DUST), gem_ingot);
 		}
 		
 	}
 	
 	public void register() {
-		getFeature(FeatureType.ORE).register();
-		getFeature(FeatureType.DUST).register();
-		getFeature(FeatureType.BLOCK).register();
-		getFeature(FeatureType.GEAR).register();
+		getFeature(OreFeatureType.ORE).register();
+		getFeature(OreFeatureType.DUST).register();
+		getFeature(OreFeatureType.BLOCK).register();
+		getFeature(OreFeatureType.GEAR).register();
 	}
 	
 	public void loadOreGenConfig(Configuration cfg) {
-		((BlockOre) getFeature(FeatureType.ORE)).loadConfig(cfg);
+		((BlockOre) getFeature(OreFeatureType.ORE)).loadConfig(cfg);
 	}
 	
 	public void loadToolConfig(Configuration cfg) {
 		OreFamilyFeatureItemBase gem_ingot;
-		if(hasFeature(FeatureType.INGOT)) {
-			gem_ingot = (OreFamilyFeatureItemBase) getFeature(FeatureType.INGOT);
+		if(hasFeature(OreFeatureType.INGOT)) {
+			gem_ingot = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.INGOT);
 		}
-		else if(hasFeature(FeatureType.GEM)) {
-			gem_ingot = (OreFamilyFeatureItemBase) getFeature(FeatureType.GEM);
+		else if(hasFeature(OreFeatureType.GEM)) {
+			gem_ingot = (OreFamilyFeatureItemBase) getFeature(OreFeatureType.GEM);
 		}
 		else {
 			return;
@@ -247,8 +247,8 @@ public class OreFamily {
 	}
 	
 	public void registerToWorldGenerators() {
-		if(!hasFeature(FeatureType.ORE)) return;
-		BlockOre ore = (BlockOre) getFeature(FeatureType.ORE);
+		if(!hasFeature(OreFeatureType.ORE)) return;
+		BlockOre ore = (BlockOre) getFeature(OreFeatureType.ORE);
 		WorldGenerators.oreGenerator.addOreGenerator(ore, ore.getOreGeneratorConfig());
 	}
 	
@@ -276,19 +276,19 @@ public class OreFamily {
 		return this._oreName;
 	}
 	
-	public void includeFeature(FeatureType featureType) {
+	public void includeFeature(OreFeatureType featureType) {
 		existFeatures.put(featureType, true);
 	}
 	
-	public void excludeFeature(FeatureType featureType) {
+	public void excludeFeature(OreFeatureType featureType) {
 		existFeatures.put(featureType, false);
 	}
 	
-	public boolean hasFeature(FeatureType featureType) {
+	public boolean hasFeature(OreFeatureType featureType) {
 		return existFeatures.get(featureType);
 	}
 	
-	public IOreFamilyFeature getFeature(FeatureType featureType) {
+	public IOreFamilyFeature getFeature(OreFeatureType featureType) {
 		return features.get(featureType);
 	}
 	

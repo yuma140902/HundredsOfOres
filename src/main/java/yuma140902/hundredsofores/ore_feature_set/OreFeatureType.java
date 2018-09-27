@@ -1,6 +1,6 @@
 package yuma140902.hundredsofores.ore_feature_set;
 
-public enum FeatureType {
+public enum OreFeatureType {
 	ORE,
 	BLOCK,
 	INGOT,
