@@ -8,8 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.MyItems;
-import yuma140902.hundredsofores.orefamilies.FeatureType;
-import yuma140902.hundredsofores.orefamilies.OreFamilies;
+import yuma140902.hundredsofores.ore_feature_set.FeatureType;
+import yuma140902.hundredsofores.ore_feature_set.OreFamilies;
 
 public final class Recipes {
 	private Recipes() {}

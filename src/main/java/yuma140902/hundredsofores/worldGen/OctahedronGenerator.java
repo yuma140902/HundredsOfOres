@@ -7,8 +7,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.world.World;
-import yuma140902.hundredsofores.orefamilies.FeatureType;
-import yuma140902.hundredsofores.orefamilies.OreFamilies;
+import yuma140902.hundredsofores.ore_feature_set.FeatureType;
+import yuma140902.hundredsofores.ore_feature_set.OreFamilies;
 
 public class OctahedronGenerator extends WorldGeneratorBase {
 

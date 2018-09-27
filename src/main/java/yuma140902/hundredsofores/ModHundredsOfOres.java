@@ -7,7 +7,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 import yuma140902.hundredsofores.creativeTabs.HOOCreativeTab;
-import yuma140902.hundredsofores.orefamilies.OreFamilies;
+import yuma140902.hundredsofores.ore_feature_set.OreFamilies;
 import yuma140902.hundredsofores.recipes.Recipes;
 import yuma140902.hundredsofores.worldGen.WorldGenerators;
 

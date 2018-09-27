@@ -1,9 +1,9 @@
-package yuma140902.hundredsofores.orefamilies;
+package yuma140902.hundredsofores.ore_feature_set;
 
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.orefamilies.features.BlockOre;
+import yuma140902.hundredsofores.ore_feature_set.features.BlockOre;
 import yuma140902.hundredsofores.util.ListUtil;
 
 public final class OreFamilies {

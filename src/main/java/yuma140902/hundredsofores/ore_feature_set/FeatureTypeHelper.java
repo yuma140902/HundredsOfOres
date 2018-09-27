@@ -1,13 +1,13 @@
-package yuma140902.hundredsofores.orefamilies;
+package yuma140902.hundredsofores.ore_feature_set;
 
 import net.minecraft.block.BlockCommandBlock;
 import net.minecraft.block.BlockOre;
 import net.minecraft.item.ItemPickaxe;
-import yuma140902.hundredsofores.orefamilies.features.ItemDust;
-import yuma140902.hundredsofores.orefamilies.features.ItemGear;
-import yuma140902.hundredsofores.orefamilies.features.ItemGem;
-import yuma140902.hundredsofores.orefamilies.features.ItemIngot;
-import yuma140902.hundredsofores.orefamilies.features.ItemNugget;
+import yuma140902.hundredsofores.ore_feature_set.features.ItemDust;
+import yuma140902.hundredsofores.ore_feature_set.features.ItemGear;
+import yuma140902.hundredsofores.ore_feature_set.features.ItemGem;
+import yuma140902.hundredsofores.ore_feature_set.features.ItemIngot;
+import yuma140902.hundredsofores.ore_feature_set.features.ItemNugget;
 
 public final class FeatureTypeHelper {
 	private FeatureTypeHelper() {}

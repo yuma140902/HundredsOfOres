@@ -6,8 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import yuma140902.hundredsofores.orefamilies.FeatureType;
-import yuma140902.hundredsofores.orefamilies.OreFamilies;
+import yuma140902.hundredsofores.ore_feature_set.FeatureType;
+import yuma140902.hundredsofores.ore_feature_set.OreFamilies;
 
 public class HOOCreativeTab extends CreativeTabs {
 	public HOOCreativeTab() {

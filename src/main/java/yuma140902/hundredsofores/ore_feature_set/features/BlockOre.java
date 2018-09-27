@@ -1,4 +1,4 @@
-package yuma140902.hundredsofores.orefamilies.features;
+package yuma140902.hundredsofores.ore_feature_set.features;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -6,9 +6,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.orefamilies.OreFamilyFeatureBlockBase;
-import yuma140902.hundredsofores.orefamilies.OreGenConfig;
-import yuma140902.hundredsofores.orefamilies.OreID;
+import yuma140902.hundredsofores.ore_feature_set.OreFamilyFeatureBlockBase;
+import yuma140902.hundredsofores.ore_feature_set.OreGenConfig;
+import yuma140902.hundredsofores.ore_feature_set.OreID;
 import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.StringUtil;
 

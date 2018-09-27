@@ -1,4 +1,4 @@
-package yuma140902.hundredsofores.orefamilies;
+package yuma140902.hundredsofores.ore_feature_set;
 
 import net.minecraft.item.Item;
 
