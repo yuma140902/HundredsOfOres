@@ -6,9 +6,9 @@ import yuma140902.hundredsofores.ModHundredsOfOres;
 import yuma140902.hundredsofores.ore_feature_set.features.BlockOre;
 import yuma140902.hundredsofores.util.ListUtil;
 
-public final class OreFamilies {
+public final class OreFeaturesSets {
 	
-	private OreFamilies() {};
+	private OreFeaturesSets() {};
 	
 	public static int[] globalDimensionBlackList;
 

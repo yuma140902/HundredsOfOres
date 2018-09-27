@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import yuma140902.hundredsofores.ore_feature_set.OreFamilies;
+import yuma140902.hundredsofores.ore_feature_set.OreFeaturesSets;
 import yuma140902.hundredsofores.ore_feature_set.OreGenConfig;
 import yuma140902.hundredsofores.util.ListUtil;
 import yuma140902.hundredsofores.util.Pair;
@@ -44,7 +44,7 @@ public class MyOreGenerator implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		int dimension = world.provider.dimensionId;
-		if(ListUtil.contains(OreFamilies.globalDimensionBlackList, dimension)) return;
+		if(ListUtil.contains(OreFeaturesSets.globalDimensionBlackList, dimension)) return;
 		
 		for (Pair<WorldGenMinable, OreGenConfig> pair : _worldGenMinabes) {
 			WorldGenMinable generator = pair.getLeft();

@@ -9,7 +9,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.MyItems;
 import yuma140902.hundredsofores.ore_feature_set.OreFeatureType;
-import yuma140902.hundredsofores.ore_feature_set.OreFamilies;
+import yuma140902.hundredsofores.ore_feature_set.OreFeaturesSets;
 
 public final class Recipes {
 	private Recipes() {}
@@ -41,7 +41,7 @@ public final class Recipes {
 	}
 	
 	private static void registerAlloyRecipes() {
-		Item silverDust = (Item) OreFamilies.silver.getFeature(OreFeatureType.DUST);
+		Item silverDust = (Item) OreFeaturesSets.silver.getFeature(OreFeatureType.DUST);
 		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				new ItemStack(MyItems.electrumDust, 4, 0), 
