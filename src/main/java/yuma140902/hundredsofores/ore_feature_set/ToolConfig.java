@@ -27,23 +27,23 @@ public class ToolConfig {
 		this.enchantability = defaultEnchantability;
 	}
 	
-	public void setdefaultHarvestLevel(int value) {
+	public void setDefaultHarvestLevel(int value) {
 		this.defaultHarvestLevel = value;
 	}
 
-	public void setdefaultMaxUses(int value) {
+	public void setDefaultMaxUses(int value) {
 		this.defaultMaxUses = value;
 	}
 
-	public void setdefaultEfficiency(float value) {
+	public void setDefaultEfficiency(float value) {
 		this.defaultEfficiency = value;
 	}
 
-	public void setdefaultDamage(float value) {
+	public void setDefaultDamage(float value) {
 		this.defaultDamage = value;
 	}
 
-	public void setdefaultEnchantability(int value) {
+	public void setDefaultEnchantability(int value) {
 		this.defaultEnchantability = value;
 	}
 	
