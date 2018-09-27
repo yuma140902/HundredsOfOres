@@ -67,6 +67,7 @@ public final class OreFeaturesSets {
 			copper.loadToolConfig(toolConfig);
 			silver.loadToolConfig(toolConfig);
 			lead.loadToolConfig(toolConfig);
+			rainbow.loadToolConfig(toolConfig);
 			ruby.loadToolConfig(toolConfig);
 		}
 		finally {
