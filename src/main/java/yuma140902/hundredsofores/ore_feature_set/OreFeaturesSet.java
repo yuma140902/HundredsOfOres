@@ -296,7 +296,7 @@ public class OreFeaturesSet {
 	public void registerToWorldGenerators() {
 		if(!hasFeature(OreFeatureType.ORE)) return;
 		BlockOre ore = (BlockOre) getFeature(OreFeatureType.ORE);
-		WorldGenerators.oreGenerator.addOreGenerator(ore, ore.getOreGeneratorConfig());
+		WorldGenerators.oreGenerator.addOreGenerator(ore, oreGenConfig);
 	}
 	
 	public void setToolConfigDefaultHarvestLevel(int value) {
