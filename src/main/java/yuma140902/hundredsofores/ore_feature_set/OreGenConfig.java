@@ -4,7 +4,7 @@ import yuma140902.hundredsofores.util.ListUtil;
 
 public class OreGenConfig {
 	public OreGenConfig() {
-		updateDefault();
+		setDefaultValues();
 	}
 	
 	public OreGenConfig(int spawnTries, int spawnSize, int maxHeight, int minHeight, int... dimensionBlackList) {
@@ -34,7 +34,7 @@ public class OreGenConfig {
 	protected int defaultMinHeight = 0;
 	protected String[] defaultDimensionBlackListStr = new String[] {};
 	
-	public void updateDefault() {
+	public void setDefaultValues() {
 		this.enabled = defaultIsOrdinaryGenEnabled;
 		this.spawnTries = defaultSpawnTries;
 		this.spawnSize = defaultSpawnSize;
