@@ -224,6 +224,16 @@ public class OreFeaturesSet {
 	public void loadToolConfig(Configuration cfg) {
 		if(!hasFeature(OreFeatureType.PICKAXE)) return;
 		
+		String toolNameLiteral = "pickaxe" + StringUtil.ToCase_XxxXxx(getOreId());
+		
+		toolConfig.loadFromConfigFile(cfg, toolNameLiteral);
+		
+		String name = ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(getOreId()) + ".pickaxe";
+		
+		toolMaterial = EnumHelper.addToolMaterial
+				(name, toolConfig.harvestLevel, toolConfig.maxUses, toolConfig.efficiency, toolConfig.damage, toolConfig.enchantability);
+		
+		
 		OreFeatureItemBase gem_ingot;
 		if(hasFeature(OreFeatureType.INGOT)) {
 			gem_ingot = (OreFeatureItemBase) getFeature(OreFeatureType.INGOT);
@@ -234,16 +244,6 @@ public class OreFeaturesSet {
 		else {
 			gem_ingot = null;
 		}
-		
-		String toolNameLiteral = "pickaxe" + StringUtil.ToCase_XxxXxx(getOreId());
-		String categoryName = toolNameLiteral;
-		
-		toolConfig.loadFromConfigFile(cfg, toolNameLiteral);
-		
-		String name = ModHundredsOfOres.MOD_ID + "." + StringUtil.ToCase_xxx_xxx(getOreId()) + ".pickaxe";
-		
-		toolMaterial = EnumHelper.addToolMaterial
-				(name, toolConfig.harvestLevel, toolConfig.maxUses, toolConfig.efficiency, toolConfig.damage, toolConfig.enchantability);
 		
 		if(gem_ingot != null) {
 			toolMaterial = toolMaterial.setRepairItem(new ItemStack(gem_ingot));
