@@ -216,9 +216,10 @@ public class OreFeaturesSet {
 	}
 	
 	public void loadOreGenConfig(Configuration cfg) {
-		if(!hasFeature(OreFeatureType.ORE)) return;
-		
 		oreGenConfig.loadFromConfigFile(cfg, "ore" + StringUtil.ToCase_XxxXxx(_oreName));
+		if(!hasFeature(OreFeatureType.ORE)) {
+			oreGenConfig.enabled = false;
+		}
 	}
 	
 	public void loadToolConfig(Configuration cfg) {
