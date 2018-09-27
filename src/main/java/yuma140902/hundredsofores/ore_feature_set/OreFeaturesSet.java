@@ -56,7 +56,9 @@ public class OreFeaturesSet {
 		
 		for(OreFeatureType key : OreFeatureType.values()) {
 			features.put(key, IOreFeature.EMPTY);
+			existFeatures.put(key, false);
 		}
+		
 		includeFeature(OreFeatureType.ORE);
 		includeFeature(OreFeatureType.BLOCK);
 		includeFeature(OreFeatureType.PICKAXE);
