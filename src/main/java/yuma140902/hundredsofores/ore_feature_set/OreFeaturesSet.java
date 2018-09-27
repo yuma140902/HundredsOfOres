@@ -224,33 +224,7 @@ public class OreFeaturesSet {
 	public void loadOreGenConfig(Configuration cfg) {
 		if(!hasFeature(OreFeatureType.ORE)) return;
 		
-		String oreNameLiteral = "ore" + StringUtil.ToCase_XxxXxx(_oreName);
-		oreGenConfig.enabled = cfg.getBoolean(
-				oreNameLiteral + "_isDefaultGenEnabled", "gen_" + oreNameLiteral, oreGenConfig.defaultIsOrdinaryGenEnabled,
-				oreNameLiteral + "の標準の生成が有効になっているかどうか");
-		oreGenConfig.spawnTries = cfg.getInt(
-				oreNameLiteral + "_SpawnTries", "gen_" + oreNameLiteral, oreGenConfig.defaultSpawnTries, 0, 1024,
-				oreNameLiteral + "の生成確率");
-		oreGenConfig.spawnSize = cfg.getInt(
-				oreNameLiteral + "_SpawnSize", "gen_" + oreNameLiteral, oreGenConfig.defaultSpawnSize, 0, 1024,
-				oreNameLiteral + "が一度に生成される数");
-		oreGenConfig.maxHeight = cfg.getInt(
-				oreNameLiteral + "_MaxHeight", "gen_" + oreNameLiteral, oreGenConfig.defaultMaxHeight, 0, 256,
-				oreNameLiteral + "が生成される最高の高さ");
-		oreGenConfig.minHeight = cfg.getInt(
-				oreNameLiteral + "_MinHeight", "gen_" + oreNameLiteral, oreGenConfig.defaultMinHeight, 0, 256,
-				oreNameLiteral + "が生成される最低の高さ");
-		
-		String[] dimensionBlackListStr = cfg.getStringList(
-				oreNameLiteral + "_dimensionBlackList", "gen_" + oreNameLiteral, oreGenConfig.defaultDimensionBlackListStr,
-				oreNameLiteral + "を生成しないディメンションID");
-		
-		if (oreGenConfig.enabled) {
-			oreGenConfig.dimensionBlackList = ListUtil.ToIntList(dimensionBlackListStr);
-		}
-		else {
-			oreGenConfig = null;
-		}
+		oreGenConfig.loadFromConfigFile(cfg, "ore" + StringUtil.ToCase_XxxXxx(_oreName));
 	}
 	
 	public void loadToolConfig(Configuration cfg) {

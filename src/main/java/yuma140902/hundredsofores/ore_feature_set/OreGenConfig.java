@@ -1,5 +1,6 @@
 package yuma140902.hundredsofores.ore_feature_set;
 
+import net.minecraftforge.common.config.Configuration;
 import yuma140902.hundredsofores.util.ListUtil;
 
 public class OreGenConfig {
@@ -65,5 +66,31 @@ public class OreGenConfig {
 	
 	public void setdefaultDimensionBlackListStr(String[] value) {
 		this.defaultDimensionBlackListStr = value;
+	}
+	
+	public void loadFromConfigFile(Configuration cfg, String oreNameLiteral) {
+		this.enabled = cfg.getBoolean(
+				oreNameLiteral + "_isDefaultGenEnabled", "gen_" + oreNameLiteral, this.defaultIsOrdinaryGenEnabled,
+				oreNameLiteral + "の標準の生成が有効になっているかどうか");
+		this.spawnTries = cfg.getInt(
+				oreNameLiteral + "_SpawnTries", "gen_" + oreNameLiteral, this.defaultSpawnTries, 0, 1024,
+				oreNameLiteral + "の生成確率");
+		this.spawnSize = cfg.getInt(
+				oreNameLiteral + "_SpawnSize", "gen_" + oreNameLiteral, this.defaultSpawnSize, 0, 1024,
+				oreNameLiteral + "が一度に生成される数");
+		this.maxHeight = cfg.getInt(
+				oreNameLiteral + "_MaxHeight", "gen_" + oreNameLiteral, this.defaultMaxHeight, 0, 256,
+				oreNameLiteral + "が生成される最高の高さ");
+		this.minHeight = cfg.getInt(
+				oreNameLiteral + "_MinHeight", "gen_" + oreNameLiteral, this.defaultMinHeight, 0, 256,
+				oreNameLiteral + "が生成される最低の高さ");
+		
+		String[] dimensionBlackListStr = cfg.getStringList(
+				oreNameLiteral + "_dimensionBlackList", "gen_" + oreNameLiteral, this.defaultDimensionBlackListStr,
+				oreNameLiteral + "を生成しないディメンションID");
+		
+		if (this.enabled) {
+			this.dimensionBlackList = ListUtil.ToIntList(dimensionBlackListStr);
+		}
 	}
 }
