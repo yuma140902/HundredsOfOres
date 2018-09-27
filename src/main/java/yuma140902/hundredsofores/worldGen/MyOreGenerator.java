@@ -21,7 +21,7 @@ public class MyOreGenerator implements IWorldGenerator {
 	public MyOreGenerator() {}
 	
 	public void addOreGenerator(Block ore, OreGenConfig config) {
-		if(config == null) return;
+		if(config == null || !config.enabled) return;
 		
 		if (config.minHeight < 0 || config.maxHeight > 256 || config.minHeight > config.maxHeight)
 			throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");
