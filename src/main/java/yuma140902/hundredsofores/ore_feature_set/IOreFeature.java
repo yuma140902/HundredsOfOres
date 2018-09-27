@@ -3,8 +3,8 @@ package yuma140902.hundredsofores.ore_feature_set;
 import yuma140902.hundredsofores.core.IOreDictionary;
 import yuma140902.hundredsofores.core.IRegisterable;
 
-public interface IOreFamilyFeature extends IRegisterable, IOreDictionary {
-	public static final IOreFamilyFeature EMPTY = new IOreFamilyFeature() {
+public interface IOreFeature extends IRegisterable, IOreDictionary {
+	public static final IOreFeature EMPTY = new IOreFeature() {
 		
 		@Override
 		public String getOreDictionaryKey() {
@@ -17,7 +17,7 @@ public interface IOreFamilyFeature extends IRegisterable, IOreDictionary {
 		}
 	};
 	
-	public static boolean isEmpty(IOreFamilyFeature obj) {
+	public static boolean isEmpty(IOreFeature obj) {
 		return EMPTY.equals(obj);
 	}
 }

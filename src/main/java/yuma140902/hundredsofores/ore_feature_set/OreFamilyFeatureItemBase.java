@@ -2,7 +2,7 @@ package yuma140902.hundredsofores.ore_feature_set;
 
 import net.minecraft.item.Item;
 
-public abstract class OreFamilyFeatureItemBase extends Item implements IOreFamilyFeature {
+public abstract class OreFamilyFeatureItemBase extends Item implements IOreFeature {
 	
 	protected OreID _oreName;
 	

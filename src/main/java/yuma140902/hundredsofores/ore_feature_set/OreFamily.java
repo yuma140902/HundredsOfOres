@@ -36,7 +36,7 @@ public class OreFamily {
 	
 	private OreID _oreName;
 	
-	protected Map<OreFeatureType, IOreFamilyFeature> features = new EnumMap<>(OreFeatureType.class);
+	protected Map<OreFeatureType, IOreFeature> features = new EnumMap<>(OreFeatureType.class);
 	protected Map<OreFeatureType, Boolean> existFeatures = new EnumMap<>(OreFeatureType.class);
 	
 	protected int toolConfigDefaultHarvestLevel = 2;
@@ -55,7 +55,7 @@ public class OreFamily {
 		this._oreName = oreName;
 		
 		for(OreFeatureType key : OreFeatureType.values()) {
-			features.put(key, IOreFamilyFeature.EMPTY);
+			features.put(key, IOreFeature.EMPTY);
 		}
 	}
 	
@@ -288,7 +288,7 @@ public class OreFamily {
 		return existFeatures.get(featureType);
 	}
 	
-	public IOreFamilyFeature getFeature(OreFeatureType featureType) {
+	public IOreFeature getFeature(OreFeatureType featureType) {
 		return features.get(featureType);
 	}
 	

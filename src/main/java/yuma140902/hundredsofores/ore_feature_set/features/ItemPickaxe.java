@@ -4,11 +4,11 @@ import javax.annotation.Nonnull;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import yuma140902.hundredsofores.ModHundredsOfOres;
-import yuma140902.hundredsofores.ore_feature_set.IOreFamilyFeature;
+import yuma140902.hundredsofores.ore_feature_set.IOreFeature;
 import yuma140902.hundredsofores.ore_feature_set.OreID;
 import yuma140902.hundredsofores.util.StringUtil;
 
-public class ItemPickaxe extends net.minecraft.item.ItemPickaxe implements IOreFamilyFeature {
+public class ItemPickaxe extends net.minecraft.item.ItemPickaxe implements IOreFeature {
 	
 	private OreID _oreName;
 	private final @Nonnull String _oreDictKey;
