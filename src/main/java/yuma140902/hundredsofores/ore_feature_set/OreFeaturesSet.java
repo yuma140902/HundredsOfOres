@@ -293,12 +293,14 @@ public class OreFeaturesSet {
 		return this._oreName;
 	}
 	
-	public void includeFeature(OreFeatureType featureType) {
+	public OreFeaturesSet includeFeature(OreFeatureType featureType) {
 		existFeatures.put(featureType, true);
+		return this;
 	}
 	
-	public void excludeFeature(OreFeatureType featureType) {
+	public OreFeaturesSet excludeFeature(OreFeatureType featureType) {
 		existFeatures.put(featureType, false);
+		return this;
 	}
 	
 	public boolean hasFeature(OreFeatureType featureType) {
