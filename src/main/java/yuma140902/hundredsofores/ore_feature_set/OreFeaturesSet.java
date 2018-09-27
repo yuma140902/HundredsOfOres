@@ -64,7 +64,7 @@ public class OreFeaturesSet {
 		includeFeature(OreFeatureType.GEAR);
 	}
 	
-	// existFeaturesの値に基づいてfeaturesを初期化します。
+	// existFeaturesの値に基づいてfeaturesを初期化します。(pickaxe以外)
 	public void setFeatureValues() {
 		for(Map.Entry<OreFeatureType, Boolean> entry : existFeatures.entrySet()) {
 			if(entry.getValue() == true) {
@@ -90,12 +90,13 @@ public class OreFeaturesSet {
 					case GEAR:
 						features.put(OreFeatureType.GEAR, new ItemGear(_oreName));
 						break;
-					case PICKAXE:
-						features.put(OreFeatureType.PICKAXE, new ItemPickaxe(_oreName, toolMaterial));
-						break;
 				}
 			}
 		}
+	}
+	
+	public void setToolFeatureValues() {
+		features.put(OreFeatureType.PICKAXE, new ItemPickaxe(_oreName, toolMaterial));
 	}
 	
 	public void registerRecipes() {

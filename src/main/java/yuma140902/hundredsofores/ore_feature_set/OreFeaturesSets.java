@@ -19,6 +19,15 @@ public final class OreFeaturesSets {
 		rainbow.setFeatureValues();
 		ruby.setFeatureValues();
 	}
+	
+	public static void setToolFeatureValues() {
+		tin.setToolFeatureValues();
+		copper.setToolFeatureValues();
+		silver.setToolFeatureValues();
+		lead.setToolFeatureValues();
+		rainbow.setToolFeatureValues();
+		ruby.setToolFeatureValues();
+	}
 
 	public static void register() {
 		tin.register();
