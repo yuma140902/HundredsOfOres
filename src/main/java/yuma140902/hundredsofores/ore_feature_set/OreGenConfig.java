@@ -44,27 +44,27 @@ public class OreGenConfig {
 		this.dimensionBlackList = ListUtil.ToIntList(defaultDimensionBlackListStr);
 	}
 	
-	public void setdefaultIsOrdinaryGenEnabled(boolean value) {
+	public void setDefaultIsOrdinaryGenEnabled(boolean value) {
 		this.defaultIsOrdinaryGenEnabled = value;
 	}
 	
-	public void setdefaultSpawnTries(int value) {
+	public void setDefaultSpawnTries(int value) {
 		this.defaultSpawnTries = value;
 	}
 	
-	public void setdefaultSpawnSize(int value) {
+	public void setDefaultSpawnSize(int value) {
 		this.defaultSpawnSize = value;
 	}
 	
-	public void setdefaultMaxHeight(int value) {
+	public void setDefaultMaxHeight(int value) {
 		this.defaultMaxHeight = value;
 	}
 	
-	public void setdefaultMinHeight(int value) {
+	public void setDefaultMinHeight(int value) {
 		this.defaultMinHeight = value;
 	}
 	
-	public void setdefaultDimensionBlackListStr(String[] value) {
+	public void setDefaultDimensionBlackListStr(String[] value) {
 		this.defaultDimensionBlackListStr = value;
 	}
 	
