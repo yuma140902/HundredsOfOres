@@ -231,7 +231,7 @@ public class OreFeaturesSet {
 			gem_ingot = (OreFeatureItemBase) getFeature(OreFeatureType.GEM);
 		}
 		else {
-			return;
+			gem_ingot = null;
 		}
 		
 		String toolNameLiteral = "pickaxe" + StringUtil.ToCase_XxxXxx(getOreId());
@@ -252,8 +252,10 @@ public class OreFeaturesSet {
 				toolNameLiteral + "_Enchantability", categoryName, toolConfigDefaultEnchantability, 0, 4096,
 				toolNameLiteral + "のエンチャントの付きやすさ");
 		
-		toolMaterial = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability)
-				.setRepairItem(new ItemStack(gem_ingot));
+		if(gem_ingot != null) {
+			toolMaterial = EnumHelper.addToolMaterial(name, harvestLevel, maxUses, efficiency, damage, enchantability)
+					.setRepairItem(new ItemStack(gem_ingot));
+		}
 	}
 	
 	public void registerToWorldGenerators() {
