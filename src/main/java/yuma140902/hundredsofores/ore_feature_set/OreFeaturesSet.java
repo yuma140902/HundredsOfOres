@@ -32,7 +32,7 @@ import yuma140902.hundredsofores.worldGen.WorldGenerators;
  * @author yuma1
  *
  */
-public class OreFamily {
+public class OreFeaturesSet {
 	
 	private OreID _oreName;
 	
@@ -47,11 +47,11 @@ public class OreFamily {
 	
 	protected ToolMaterial toolMaterial;
 	
-	public OreFamily(String oreName) {
+	public OreFeaturesSet(String oreName) {
 		this(new OreID(oreName));
 	}
 	
-	public OreFamily(OreID oreName) {
+	public OreFeaturesSet(OreID oreName) {
 		this._oreName = oreName;
 		
 		for(OreFeatureType key : OreFeatureType.values()) {

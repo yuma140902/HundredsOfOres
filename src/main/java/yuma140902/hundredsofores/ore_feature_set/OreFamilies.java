@@ -89,16 +89,16 @@ public final class OreFamilies {
 	private static final String RAINBOW_NAME = "rainbow";
 	private static final String RUBY_NAME = "ruby";
 	
-	public static final OreFamily tin = new OreFamily(TIN_NAME);
-	public static final OreFamily copper = new OreFamily(COPPER_NAME);
-	public static final OreFamily silver = new OreFamily(SILVER_NAME) {{
+	public static final OreFeaturesSet tin = new OreFeaturesSet(TIN_NAME);
+	public static final OreFeaturesSet copper = new OreFeaturesSet(COPPER_NAME);
+	public static final OreFeaturesSet silver = new OreFeaturesSet(SILVER_NAME) {{
 		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
-	public static final OreFamily lead = new OreFamily(LEAD_NAME);
-	public static final OreFamily rainbow = new OreFamily(RAINBOW_NAME) {{
+	public static final OreFeaturesSet lead = new OreFeaturesSet(LEAD_NAME);
+	public static final OreFeaturesSet rainbow = new OreFeaturesSet(RAINBOW_NAME) {{
 		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultIsOrdinaryGenEnabled(false);
 	}};
-	public static final OreFamily ruby = new OreFamily(RUBY_NAME) {{
+	public static final OreFeaturesSet ruby = new OreFeaturesSet(RUBY_NAME) {{
 		((BlockOre)getFeature(OreFeatureType.ORE)).setOreGenConfigDefaultSpawnTries(10);
 	}};
 }
