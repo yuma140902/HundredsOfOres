@@ -2,16 +2,10 @@ package yuma140902.hundredsofores.ore_feature_set;
 
 import java.util.EnumMap;
 import java.util.Map;
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.ModHundredsOfOres;
 import yuma140902.hundredsofores.ore_feature_set.features.BlockCompressedBlock;
 import yuma140902.hundredsofores.ore_feature_set.features.BlockOre;
@@ -100,111 +94,7 @@ public class OreFeaturesSet {
 	}
 	
 	public void registerRecipes() {
-		
-		boolean hasGemOrIngot = hasFeature(OreFeatureType.INGOT) || hasFeature(OreFeatureType.GEM);
-		OreFeatureItemBase gem_ingot = null;
-		String gem_ingotOredict = null;
-		if(hasGemOrIngot) {
-			gem_ingot = (OreFeatureItemBase) (hasFeature(OreFeatureType.INGOT) ? getFeature(OreFeatureType.INGOT) : getFeature(OreFeatureType.GEM));
-			gem_ingotOredict = gem_ingot.getOreDictionaryKey();
-		}
-		//前処理ここまで
-		
-		if(hasFeature(OreFeatureType.ORE) && hasFeature(OreFeatureType.DUST)) {
-			// 鉱石から粉2つ TODO: 独自の粉砕機も実装したい
-			RecipeRegisterHelper.addRecipeOreToDust((Block)getFeature(OreFeatureType.ORE), (Item)getFeature(OreFeatureType.DUST));
-			RecipeRegisterHelper.addRecipeOreToDust(getFeature(OreFeatureType.ORE).getOreDictionaryKey(), (Item)getFeature(OreFeatureType.DUST));
-		}
-		
-		if(hasGemOrIngot && hasFeature(OreFeatureType.BLOCK)) {
-			OreFeatureBlockBase block = (OreFeatureBlockBase) getFeature(OreFeatureType.BLOCK);
-			String blockOredict = block.getOreDictionaryKey();
-			
-			// ブロックの解凍
-			RecipeRegisterHelper.addRecipeBlockExpand(block, gem_ingot);
-			RecipeRegisterHelper.addRecipeBlockExpand(blockOredict, gem_ingot);
-			
-			// ブロックへ圧縮
-			RecipeRegisterHelper.addRecipeBlockCompress(gem_ingot, block);
-			RecipeRegisterHelper.addRecipeBlockCompress(gem_ingotOredict, block);
-		}
-		
-		if(hasGemOrIngot && hasFeature(OreFeatureType.GEAR)) {
-			Item gear = (Item) getFeature(OreFeatureType.GEAR);
-			
-		// ジェムOrインゴットからギア
-			GameRegistry.addRecipe(new ShapedOreRecipe(
-					gear, 
-					" # ", 
-					"###", 
-					" # ", 
-					'#', gem_ingot
-					));
-			GameRegistry.addRecipe(new ShapedOreRecipe(
-					gear, 
-					" # ", 
-					"###", 
-					" # ", 
-					'#', gem_ingotOredict
-					));
-		}
-		
-		if(hasGemOrIngot && hasFeature(OreFeatureType.PICKAXE)) {
-			Item pickaxe = (Item) getFeature(OreFeatureType.PICKAXE);
-			
-			// ジェムOrインゴットからツルハシ
-			GameRegistry.addRecipe(new ShapedOreRecipe(
-					pickaxe, 
-					"###", 
-					" | ", 
-					" | ", 
-					'#', gem_ingot, 
-					'|', Items.stick
-					));
-			GameRegistry.addRecipe(new ShapedOreRecipe(
-					pickaxe, 
-					"###", 
-					" | ", 
-					" | ", 
-					'#', gem_ingotOredict, 
-					'|', Items.stick
-					));
-		}
-		
-		if(hasGemOrIngot && hasFeature(OreFeatureType.DUST)) {
-			Item dust = (Item) getFeature(OreFeatureType.DUST);
-			
-			
-			// ジェムOrインゴットから粉
-			RecipeRegisterHelper.addRecipeIngotToDust(gem_ingot, dust);
-			RecipeRegisterHelper.addRecipeIngotToDust(gem_ingotOredict, dust);
-		}
-		
-		if(hasFeature(OreFeatureType.INGOT) && hasFeature(OreFeatureType.NUGGET)) {
-			OreFeatureItemBase nugget = (OreFeatureItemBase) getFeature(OreFeatureType.NUGGET);
-			OreFeatureItemBase ingot = (OreFeatureItemBase) getFeature(OreFeatureType.INGOT);
-			String nuggetOredict = nugget.getOreDictionaryKey();
-			String ingotOredict = ingot.getOreDictionaryKey();
-			
-			// ナゲットからインゴット
-			GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nugget));
-			GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "###", "###", "###", '#', nuggetOredict));
-			
-			// インゴットからナゲット
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingot));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget, 9), ingotOredict));
-		}
-		
-		if(hasGemOrIngot && hasFeature(OreFeatureType.ORE)) {
-			// 鉱石を精錬してジェムOrインゴット
-			RecipeRegisterHelper.addSmeltingOreToIngot((Block)getFeature(OreFeatureType.ORE) , gem_ingot);
-		}
-		
-		if(hasGemOrIngot && hasFeature(OreFeatureType.DUST)) {
-			// 粉を精錬してジェムOrインゴット
-			RecipeRegisterHelper.addSmeltingDustToIngot((Item)getFeature(OreFeatureType.DUST), gem_ingot);
-		}
-		
+		RecipeRegisterHelper.addRecipesFromOreFeaturesSet(this);
 	}
 	
 	public void register() {
