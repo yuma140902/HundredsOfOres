@@ -19,6 +19,7 @@ public final class OreFeaturesSets {
 		rainbow.setFeatureValues();
 		ruby.setFeatureValues();
 		electrum.setFeatureValues();
+		gold.setFeatureValues();
 	}
 	
 	public static void setToolFeatureValues() {
@@ -29,6 +30,7 @@ public final class OreFeaturesSets {
 		rainbow.setToolFeatureValues();
 		ruby.setToolFeatureValues();
 		electrum.setToolFeatureValues();
+		gold.setToolFeatureValues();
 	}
 
 	public static void register() {
@@ -39,6 +41,7 @@ public final class OreFeaturesSets {
 		rainbow.register();
 		ruby.register();
 		electrum.register();
+		gold.register();
 	}
 	
 	public static void loadConfigs() {
@@ -58,6 +61,7 @@ public final class OreFeaturesSets {
 			rainbow.loadOreGenConfig(oreGenConfig);
 			ruby.loadOreGenConfig(oreGenConfig);
 			electrum.loadOreGenConfig(oreGenConfig);
+			gold.loadOreGenConfig(oreGenConfig);
 		}
 		finally {
 			oreGenConfig.save();
@@ -74,6 +78,7 @@ public final class OreFeaturesSets {
 			rainbow.loadToolConfig(toolConfig);
 			ruby.loadToolConfig(toolConfig);
 			electrum.loadToolConfig(toolConfig);
+			gold.loadToolConfig(toolConfig);
 		}
 		finally {
 			toolConfig.save();
@@ -88,6 +93,7 @@ public final class OreFeaturesSets {
 		rainbow.registerRecipes();
 		ruby.registerRecipes();
 		electrum.registerRecipes();
+		gold.registerRecipes();
 	}
 	
 	public static void registerToWorldGenerators() {
@@ -98,6 +104,7 @@ public final class OreFeaturesSets {
 		rainbow.registerToWorldGenerators();
 		ruby.registerToWorldGenerators();
 		electrum.registerToWorldGenerators();
+		gold.registerToWorldGenerators();
 	}
 	
 	private static final String COPPER_NAME = "copper";
@@ -139,4 +146,11 @@ public final class OreFeaturesSets {
 			.includeFeature(OreFeatureType.INGOT)
 			.includeFeature(OreFeatureType.NUGGET)
 			.excludeFeature(OreFeatureType.ORE);
+	
+	public static final OreFeaturesSet gold = new OreFeaturesSet("gold")
+			.excludeFeature(OreFeatureType.ORE)
+			.excludeFeature(OreFeatureType.BLOCK)
+			.excludeFeature(OreFeatureType.INGOT)
+			.excludeFeature(OreFeatureType.NUGGET)
+			.excludeFeature(OreFeatureType.GEM);
 }

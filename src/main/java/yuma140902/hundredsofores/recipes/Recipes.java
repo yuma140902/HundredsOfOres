@@ -1,7 +1,6 @@
 package yuma140902.hundredsofores.recipes;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -31,13 +30,7 @@ public final class Recipes {
 	
 	// OreFamilyで登録されない粉(金の粉など)のレシピを追加します。
 	private static void registerDustRecipes() {
-		RecipeRegisterHelper.addRecipeOreToDust(Blocks.gold_ore, MyItems.goldDust);
-		RecipeRegisterHelper.addRecipeOreToDust("oreGold", MyItems.goldDust);
 		
-		RecipeRegisterHelper.addRecipeIngotToDust(Items.gold_ingot, MyItems.goldDust);
-		RecipeRegisterHelper.addRecipeIngotToDust("ingotGold", MyItems.goldDust);
-		
-		RecipeRegisterHelper.addSmeltingDustToIngot(MyItems.goldDust, Items.gold_ingot);
 	}
 	
 	private static void registerAlloyRecipes() {
@@ -46,7 +39,7 @@ public final class Recipes {
 		
 		GameRegistry.addRecipe(new ShapelessOreRecipe(
 				new ItemStack((Item) electrumDust, 4, 0), 
-				MyItems.goldDust, 
+				(Item) OreFeaturesSets.gold.getFeature(OreFeatureType.DUST), 
 				silverDust,
 				silverDust,
 				silverDust
