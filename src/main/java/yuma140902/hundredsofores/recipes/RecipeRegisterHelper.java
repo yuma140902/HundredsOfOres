@@ -10,6 +10,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import yuma140902.hundredsofores.MyItems;
+import yuma140902.hundredsofores.ore_feature_set.IOreFeature;
 import yuma140902.hundredsofores.ore_feature_set.OreFeatureItemBase;
 import yuma140902.hundredsofores.ore_feature_set.OreFeatureType;
 import yuma140902.hundredsofores.ore_feature_set.OreFeaturesSet;
@@ -30,15 +31,24 @@ public final class RecipeRegisterHelper {
 	private static final ItemStack HUMMER = new ItemStack(MyItems.hummer, 1, OreDictionary.WILDCARD_VALUE);
 	
 	public static void addRecipesFromOreFeaturesSet(OreFeaturesSet ofs) {
+		IOreFeature ore = ofs.getFeature(OreFeatureType.ORE);
+		IOreFeature block = ofs.getFeature(OreFeatureType.BLOCK);
+		IOreFeature ingot = ofs.getFeature(OreFeatureType.INGOT);
+		IOreFeature nugget = ofs.getFeature(OreFeatureType.NUGGET);
+		IOreFeature gem = ofs.getFeature(OreFeatureType.GEM);
+		IOreFeature dust = ofs.getFeature(OreFeatureType.DUST);
+		IOreFeature gear = ofs.getFeature(OreFeatureType.GEAR);
+		IOreFeature pickaxe = ofs.getFeature(OreFeatureType.PICKAXE);
+		
 		addRecipesFromOreFeaturesSet(
-				(BlockOre) ofs.getFeature(OreFeatureType.ORE), 
-				(BlockCompressedBlock) ofs.getFeature(OreFeatureType.BLOCK),
-				(ItemIngot) ofs.getFeature(OreFeatureType.INGOT), 
-				(ItemNugget) ofs.getFeature(OreFeatureType.NUGGET), 
-				(ItemGem) ofs.getFeature(OreFeatureType.GEM), 
-				(ItemDust) ofs.getFeature(OreFeatureType.DUST), 
-				(ItemGear) ofs.getFeature(OreFeatureType.GEAR), 
-				(ItemPickaxe) ofs.getFeature(OreFeatureType.PICKAXE)
+				ore != null ? (BlockOre) ore : null,
+				block != null ? (BlockCompressedBlock) block : null,
+				ingot != null ? (ItemIngot) ingot : null, 
+				nugget != null ? (ItemNugget) nugget : null, 
+				gem != null ? (ItemGem) gem : null, 
+				dust != null ? (ItemDust) dust : null, 
+				gear != null ? (ItemGear) gear : null, 
+				pickaxe != null ? (ItemPickaxe) pickaxe : null
 		);
 	}
 	
